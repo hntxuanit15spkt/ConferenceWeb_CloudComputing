@@ -17,4 +17,6 @@ public class News implements Serializable {
 	private Date create_time;
 	
 	private String image;
+	
+	
 }
