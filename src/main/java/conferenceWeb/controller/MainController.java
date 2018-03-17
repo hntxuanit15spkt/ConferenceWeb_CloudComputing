@@ -12,9 +12,9 @@ public class MainController {
 		return "index";
 	}
 	
-	@GetMapping("/new-news")
+	@GetMapping("/create-news")
 	public String newTask(HttpServletRequest request) {
-		request.setAttribute("mode", "MODE_NEW");
-		return "index";
+		//request.setAttribute("mode", "MODE_NEW");
+		return "create_news";
 	}
 }
