@@ -15,7 +15,7 @@ public class News implements Serializable {
 	
 	private String content;
 	
-	private Date create_time;
+	private Date created_time;
 	
 	private String image;
 
@@ -31,7 +31,7 @@ public class News implements Serializable {
 		this.account_id = account_id;
 		this.title = title;
 		this.content = content;
-		this.create_time = create_time;
+		this.created_time = create_time;
 		this.image = image;
 	}
 
@@ -76,11 +76,11 @@ public class News implements Serializable {
 	}
 
 	public Date getCreate_time() {
-		return create_time;
+		return created_time;
 	}
 
 	public void setCreate_time(Date create_time) {
-		this.create_time = create_time;
+		this.created_time = create_time;
 	}
 
 	public String getImage() {

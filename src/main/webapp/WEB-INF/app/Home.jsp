@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!--CSS-->
 	<link rel="stylesheet" type="text/css" href="../../static/css/mycssHome.css"/>
-	<link rel="stylesheet" type="text/css" href="../../static/css/mycssHomeUser.css"/>
+	<link rel="stylesheet" type="text/css" href="css/mycssHomeUser.css"/>
 	
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<script language="javascript" src="js/myjsHome.js"></script>
@@ -123,13 +123,29 @@
 			<div class="row container">
 				<div class="col-md-9">
 					<div class="gioithieu">
-						<h3>Content</h3>
-						<p class="p_home">abcxyc</p>
+						<h3>Welcome to ICSSE 2017</h3>
+						<p class="p_home">System Science and Engineering has emerged as a research field that covers a wide spectrum of modern technology. A system can be considered as a collection of entities and their interrelationships gathered together to form a whole greater than the sum of the entities. It also involves people, organizations, cultures, activities and interrelationships among them. While systems composed of autonomous subsystems are not new, increased data density, connectivity and ubiquitous computational resources have increased their interdependence and interaction complexity. This has in turn made the already difficult job of planning, developing and deploying complex systems even more difficult.</p>
+						<p class="p_home">Technology advancement not only provides opportunities for improving system capabilities but also introduces development risks that must be weighed and managed. Thus, it is our goal to bring together scholars from all areas to have a forum to discuss, demonstrate and exchange research ideas in the scope of system science and engineering.</p>
+						<p class="p_home">The International Conference on System Science and Engineering 2017 (ICSSE 2017) is an international conference that will take place in Ho Chi Minh City during July 21-23, 2017. This event will provide a great opportunity for scientists, engineers, and practitioners from all over the world to present the latest system design concepts, research results, developments and applications, as well as to facilitate interactions between scholars and practitioners. ICSSE 2017 will feature plenary speeches in emerging technology topics given by world renowned scholars. The proceedings of ICSSE 2017 will be published by the IEEE with EI indexing. In addition, selected high-quality papers will be published by special issues of SCI-indexed journals. </p>
+						<h3>ICSSE published proceedings</h3>
+						<p class="p_home">ICSSE 2010 : <a href="">http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=5540658</a></p> 
+						<p class="p_home">ICSSE 2012 : <a href="">http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=6246741</a></p> 
+						<p class="p_home">ICSSE 2014 : <a href="">http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=6879759</a></p> 
+						<p class="p_home">ICSSE 2016 : <a href="">http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=7548195</a></p> 
+						<p class="p_home">ICSSE 2017 : <a href="">http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=8024255</a></p> 
 					</div>
+
 				</div>
 				<div class="col-md-3" style="border-left: 1px solid;">
 					<div class="gioithieu">
 						<h3 style="background-color: #b5150d; color: white; width: 200px; height: 30px;">&nbsp&nbsp&nbspLatest news</h3>
+						<div style="padding-top: 10px;">
+							<p style="color: #b5150d;">Create Date 12/09/2017</p>
+							<a href="">Congratulations! 2017 International Conference on System Science and Engineering (ICSSE) is now published in IEEE Xplore</a>
+							<hr/>
+							<p style="color: #b5150d;">Create Date 12/09/2017</p>
+							<a href="">Congratulations! 2017 International Conference on System Science and Engineering (ICSSE) is now published in IEEE Xplore</a>
+						</div>
 					</div>
 				</div>
 			</div><!--end div khoa học-->

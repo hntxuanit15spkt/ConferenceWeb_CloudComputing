@@ -381,7 +381,7 @@ span.psw {
 }
 .p_home{
   font-size: initial;
-  color:#7c7c86;
+  color:#3c3b3b;
 }
 .bloghome{
   height: 400px;
@@ -465,7 +465,6 @@ p{
 .khung{
   font-family: 'Open Sans', sans-serif;
   margin-top:10px;
-  margin-bottom: 80px;
   width: 86%;
 }
 .khung2{
