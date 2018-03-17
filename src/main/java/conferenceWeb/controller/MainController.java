@@ -11,4 +11,10 @@ public class MainController {
 	public String home(HttpServletRequest request) {
 		return "index";
 	}
+	
+	@GetMapping("/new-news")
+	public String newTask(HttpServletRequest request) {
+		request.setAttribute("mode", "MODE_NEW");
+		return "index";
+	}
 }
