@@ -11,7 +11,7 @@ public class HomeController {
 	// Giao diện vào trang chủ
 	@GetMapping("/")
 	public String home(HttpServletRequest request) {
-		return "index";
+		return "Home";
 	}
 
 }
