@@ -13,7 +13,6 @@ public class NewsService {
     private final NewsRepository newsRepository;
 
     public NewsService(NewsRepository newsRepository) {
-	super();
 	this.newsRepository = newsRepository;
     }
 
@@ -24,5 +23,4 @@ public class NewsService {
 	}
 	return lstNews;
     }
-
 }
