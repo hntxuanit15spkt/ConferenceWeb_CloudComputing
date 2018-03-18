@@ -79,17 +79,17 @@
 			<!-- br-menu-link -->
 			<a href="#" class="br-menu-link">
 				<div class="br-menu-item">
-					<i class="menu-item-icon fa fa-address-book tx-20"></i>
-					<span class="menu-item-label">Account management</span> <i
+					<i class="menu-item-icon fa fa-address-book tx-20"></i> <span
+						class="menu-item-label">Account management</span> <i
 						class="menu-item-arrow fa fa-angle-down"></i>
 				</div> <!-- menu-item -->
 			</a>
 			<!-- br-menu-link -->
 			<ul class="br-menu-sub nav flex-column">
-				<li class="nav-item"><a href="#"
-					class="nav-link">Account list</a></li>
-				<li class="nav-item"><a href="#"
-					class="nav-link">Add account</a></li>
+				<li class="nav-item"><a href="#" class="nav-link">Account
+						list</a></li>
+				<li class="nav-item"><a href="#" class="nav-link">Add
+						account</a></li>
 			</ul>
 			<a href="#" class="br-menu-link active show-sub">
 				<div class="br-menu-item">
@@ -100,10 +100,12 @@
 			</a>
 			<!-- br-menu-link -->
 			<ul class="br-menu-sub nav flex-column">
-				<li class="nav-item"><a href="/all-news"
-					class="nav-link">News list</a></li>
+				<li class="nav-item"><a href="/all-news" class="nav-link">News
+						list</a></li>
 				<li class="nav-item"><a href="/create-news"
-					class="nav-link active">Add news</a></li>
+					class="nav-link">Add news</a></li>
+				<li class="nav-item"><a href="/create-news"
+					class="nav-link active">Update news</a></li>
 			</ul>
 			<a href="#" class="br-menu-link">
 				<div class="br-menu-item">
@@ -111,7 +113,7 @@
 						class="menu-item-label">Webpages management</span>
 				</div> <!-- menu-item -->
 			</a>
-			
+
 			<!-- br-menu-link -->
 			<ul class="br-menu-sub nav flex-column">
 				<li class="nav-item"><a href="background.html" class="nav-link">Background</a></li>
