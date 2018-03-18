@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import conferenceWeb.dao.NewsRepository;
 import conferenceWeb.model.News;
 
-@Service
+@Service //This annotation is a specialized form of the@Component annotation intended to be used in the service layer.
 @Transactional
 public class NewsService {
     private final NewsRepository newsRepository;

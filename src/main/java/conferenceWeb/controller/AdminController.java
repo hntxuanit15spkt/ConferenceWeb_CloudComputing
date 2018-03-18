@@ -12,7 +12,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import conferenceWeb.service.NewsService;
 
-@Controller
+@Controller // Gọi là một specialized form của @Component annotation. Đánh dấu class này
+// như là một bean và cơ chế component-scanning sẽ thêm nó
+// vào application - context. Có trong application-contex thì class này mới thực
+// thi được
 public class AdminController {
 
     @Autowired
@@ -21,8 +24,8 @@ public class AdminController {
     // Xem danh sách
     @GetMapping("/all-news")
     public String AllNews(HttpServletRequest request) {
-	//request.setAttribute("lst_news", newsService.findAll());
-	//request.setAttribute("mode", "MODE_TASKS");
+	// request.setAttribute("lst_news", newsService.findAll());
+	// request.setAttribute("mode", "MODE_TASKS");
 	return "all-news";
     }
 
