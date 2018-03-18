@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <head>
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+<%@ page contentType="text/html; charset=UTF-8"%>
 <!-- Twitter -->
 <meta name="twitter:site" content="@themepixels">
 <meta name="twitter:creator" content="@themepixels">
@@ -42,16 +44,20 @@
 <link href="../../static/lib/font-awesome/css/font-awesome.css"
 	rel="stylesheet">
 <link href="../../static/lib/Ionicons/css/ionicons.css" rel="stylesheet">
-<link href="../lib/perfect-scrollbar/css/perfect-scrollbar.css"
+<link
+	href="../../static/lib/perfect-scrollbar/css/perfect-scrollbar.css"
 	rel="stylesheet">
-<link href="../lib/jquery-switchbutton/jquery.switchButton.css"
+<link
+	href="../../static/lib/jquery-switchbutton/jquery.switchButton.css"
 	rel="stylesheet">
-<link href="../lib/highlightjs/github.css" rel="stylesheet">
-<link href="../lib/datatables/jquery.dataTables.css" rel="stylesheet">
-<link href="../lib/select2/css/select2.min.css" rel="stylesheet">
+<link href="../../static/lib/highlightjs/github.css" rel="stylesheet">
+<link href="../../static/lib/datatables/jquery.dataTables.css"
+	rel="stylesheet">
+<link href="../../static/lib/select2/css/select2.min.css"
+	rel="stylesheet">
 
 <!-- Bracket CSS -->
-<link rel="stylesheet" href="../css/bracket.css">
+<link rel="stylesheet" href="../../static/css/bracket.css">
 </head>
 
 <body>
@@ -70,139 +76,41 @@
 				</div> <!-- menu-item -->
 			</a>
 			<!-- br-menu-link -->
-			<a href="mailbox.html" class="br-menu-link">
-				<div class="br-menu-item">
-					<i class="menu-item-icon icon ion-ios-email-outline tx-24"></i> <span
-						class="menu-item-label">Mailbox</span>
-				</div> <!-- menu-item -->
-			</a>
-			<!-- br-menu-link -->
-			<a href="card-dashboard.html" class="br-menu-link">
-				<div class="br-menu-item">
-					<i class="menu-item-icon icon ion-ios-photos-outline tx-20"></i> <span
-						class="menu-item-label">Cards &amp; Widgets</span>
-				</div> <!-- menu-item -->
-			</a>
-			<!-- br-menu-link -->
 			<a href="#" class="br-menu-link">
 				<div class="br-menu-item">
-					<i class="menu-item-icon icon ion-ios-filing-outline tx-24"></i> <span
-						class="menu-item-label">UI Elements</span> <i
+					<i class="menu-item-icon fa fa-address-book tx-20"></i>
+					<span class="menu-item-label">Account management</span> <i
 						class="menu-item-arrow fa fa-angle-down"></i>
 				</div> <!-- menu-item -->
 			</a>
 			<!-- br-menu-link -->
 			<ul class="br-menu-sub nav flex-column">
-				<li class="nav-item"><a href="accordion.html" class="nav-link">Accordion</a></li>
-				<li class="nav-item"><a href="alerts.html" class="nav-link">Alerts</a></li>
-				<li class="nav-item"><a href="buttons.html" class="nav-link">Buttons</a></li>
-				<li class="nav-item"><a href="cards.html" class="nav-link">Cards</a></li>
-				<li class="nav-item"><a href="icons.html" class="nav-link">Icons</a></li>
-				<li class="nav-item"><a href="modal.html" class="nav-link">Modal</a></li>
-				<li class="nav-item"><a href="pagination.html" class="nav-link">Pagination</a></li>
-				<li class="nav-item"><a href="popups.html" class="nav-link">Tooltip
-						&amp; Popover</a></li>
-				<li class="nav-item"><a href="progress.html" class="nav-link">Progress</a></li>
-				<li class="nav-item"><a href="spinners.html" class="nav-link">Spinners</a></li>
-				<li class="nav-item"><a href="typography.html" class="nav-link">Typography</a></li>
-			</ul>
-			<a href="#" class="br-menu-link">
-				<div class="br-menu-item">
-					<i class="menu-item-icon ion-ios-redo-outline tx-24"></i> <span
-						class="menu-item-label">Navigation</span> <i
-						class="menu-item-arrow fa fa-angle-down"></i>
-				</div> <!-- menu-item -->
-			</a>
-			<!-- br-menu-link -->
-			<ul class="br-menu-sub nav flex-column">
-				<li class="nav-item"><a href="navigation.html" class="nav-link">Basic
-						Nav</a></li>
-				<li class="nav-item"><a href="navigation-layouts.html"
-					class="nav-link">Nav Layouts</a></li>
-			</ul>
-			<a href="#" class="br-menu-link">
-				<div class="br-menu-item">
-					<i class="menu-item-icon ion-ios-pie-outline tx-20"></i> <span
-						class="menu-item-label">Charts</span> <i
-						class="menu-item-arrow fa fa-angle-down"></i>
-				</div> <!-- menu-item -->
-			</a>
-			<!-- br-menu-link -->
-			<ul class="br-menu-sub nav flex-column">
-				<li class="nav-item"><a href="chart-morris.html"
-					class="nav-link">Morris Charts</a></li>
-				<li class="nav-item"><a href="chart-flot.html" class="nav-link">Flot
-						Charts</a></li>
-				<li class="nav-item"><a href="chart-chartjs.html"
-					class="nav-link">Chart JS</a></li>
-				<li class="nav-item"><a href="chart-rickshaw.html"
-					class="nav-link">Rickshaw</a></li>
-				<li class="nav-item"><a href="chart-chartist.html"
-					class="nav-link">Chartist</a></li>
-				<li class="nav-item"><a href="chart-sparkline.html"
-					class="nav-link">Sparkline</a></li>
-				<li class="nav-item"><a href="chart-peity.html"
-					class="nav-link">Peity</a></li>
-			</ul>
-			<a href="#" class="br-menu-link">
-				<div class="br-menu-item">
-					<i class="menu-item-icon icon ion-ios-gear-outline tx-24"></i> <span
-						class="menu-item-label">Forms</span> <i
-						class="menu-item-arrow fa fa-angle-down"></i>
-				</div> <!-- menu-item -->
-			</a>
-			<!-- br-menu-link -->
-			<ul class="br-menu-sub nav flex-column">
-				<li class="nav-item"><a href="form-elements.html"
-					class="nav-link">Form Elements</a></li>
-				<li class="nav-item"><a href="form-layouts.html"
-					class="nav-link">Form Layouts</a></li>
-				<li class="nav-item"><a href="form-validation.html"
-					class="nav-link">Form Validation</a></li>
-				<li class="nav-item"><a href="form-wizards.html"
-					class="nav-link">Form Wizards</a></li>
-				<li class="nav-item"><a href="form-editor-code.html"
-					class="nav-link">Code Editor</a></li>
-				<li class="nav-item"><a href="form-editor-text.html"
-					class="nav-link">Text Editor</a></li>
+				<li class="nav-item"><a href="#"
+					class="nav-link">Account list</a></li>
+				<li class="nav-item"><a href="#"
+					class="nav-link">Add account</a></li>
 			</ul>
 			<a href="#" class="br-menu-link active show-sub">
 				<div class="br-menu-item">
 					<i class="menu-item-icon icon ion-ios-bookmarks-outline tx-20"></i>
-					<span class="menu-item-label">Tables</span> <i
+					<span class="menu-item-label">News management</span> <i
 						class="menu-item-arrow fa fa-angle-down"></i>
 				</div> <!-- menu-item -->
 			</a>
 			<!-- br-menu-link -->
 			<ul class="br-menu-sub nav flex-column">
-				<li class="nav-item"><a href="table-basic.html"
-					class="nav-link">Basic Table</a></li>
-				<li class="nav-item"><a href="table-datatable.html"
-					class="nav-link active">Data Table</a></li>
+				<li class="nav-item"><a href="/all-news"
+					class="nav-link active">News list</a></li>
+				<li class="nav-item"><a href="/create-news"
+					class="nav-link">Add news</a></li>
 			</ul>
 			<a href="#" class="br-menu-link">
 				<div class="br-menu-item">
-					<i class="menu-item-icon icon ion-ios-navigate-outline tx-24"></i>
-					<span class="menu-item-label">Maps</span> <i
-						class="menu-item-arrow fa fa-angle-down"></i>
+					<i class="menu-item-icon icon ion-ios-paper-outline tx-22"></i> <span
+						class="menu-item-label">Webpages management</span>
 				</div> <!-- menu-item -->
 			</a>
-			<!-- br-menu-link -->
-			<ul class="br-menu-sub nav flex-column">
-				<li class="nav-item"><a href="map-google.html" class="nav-link">Google
-						Maps</a></li>
-				<li class="nav-item"><a href="map-leaflet.html"
-					class="nav-link">Leaflet Maps</a></li>
-				<li class="nav-item"><a href="map-vector.html" class="nav-link">Vector
-						Maps</a></li>
-			</ul>
-			<a href="#" class="br-menu-link">
-				<div class="br-menu-item">
-					<i class="menu-item-icon icon ion-ios-briefcase-outline tx-22"></i>
-					<span class="menu-item-label">Utilities</span> <i
-						class="menu-item-arrow fa fa-angle-down"></i>
-				</div> <!-- menu-item -->
-			</a>
+			
 			<!-- br-menu-link -->
 			<ul class="br-menu-sub nav flex-column">
 				<li class="nav-item"><a href="background.html" class="nav-link">Background</a></li>
@@ -215,84 +123,7 @@
 					class="nav-link">Typography</a></li>
 				<li class="nav-item"><a href="width.html" class="nav-link">Width</a></li>
 			</ul>
-			<a href="pages.html" class="br-menu-link">
-				<div class="br-menu-item">
-					<i class="menu-item-icon icon ion-ios-paper-outline tx-22"></i> <span
-						class="menu-item-label">Apps &amp; Pages</span>
-				</div> <!-- menu-item -->
-			</a>
 			<!-- br-menu-link -->
-			<a href="layouts.html" class="br-menu-link">
-				<div class="br-menu-item">
-					<i class="menu-item-icon icon ion-ios-book-outline tx-22"></i> <span
-						class="menu-item-label">Layouts</span>
-				</div> <!-- menu-item -->
-			</a>
-			<!-- br-menu-link -->
-			<a href="sitemap.html" class="br-menu-link">
-				<div class="br-menu-item">
-					<i class="menu-item-icon icon ion-ios-list-outline tx-22"></i> <span
-						class="menu-item-label">Sitemap</span>
-				</div> <!-- menu-item -->
-			</a>
-			<!-- br-menu-link -->
-		</div>
-		<!-- br-sideleft-menu -->
-
-		<label class="sidebar-label pd-x-15 mg-t-25 mg-b-20 tx-info op-9">Information
-			Summary</label>
-
-		<div class="info-list">
-			<div
-				class="d-flex align-items-center justify-content-between pd-x-15">
-				<div>
-					<p
-						class="tx-10 tx-roboto tx-uppercase tx-spacing-1 tx-white op-3 mg-b-2 space-nowrap">Memory
-						Usage</p>
-					<h5 class="tx-lato tx-white tx-normal mg-b-0">32.3%</h5>
-				</div>
-				<span class="peity-bar"
-					data-peity='{ "fill": ["#336490"], "height": 35, "width": 60 }'>8,6,5,9,8,4,9,3,5,9</span>
-			</div>
-			<!-- d-flex -->
-
-			<div
-				class="d-flex align-items-center justify-content-between pd-x-15 mg-t-20">
-				<div>
-					<p
-						class="tx-10 tx-roboto tx-uppercase tx-spacing-1 tx-white op-3 mg-b-2 space-nowrap">CPU
-						Usage</p>
-					<h5 class="tx-lato tx-white tx-normal mg-b-0">140.05</h5>
-				</div>
-				<span class="peity-bar"
-					data-peity='{ "fill": ["#1C7973"], "height": 35, "width": 60 }'>4,3,5,7,12,10,4,5,11,7</span>
-			</div>
-			<!-- d-flex -->
-
-			<div
-				class="d-flex align-items-center justify-content-between pd-x-15 mg-t-20">
-				<div>
-					<p
-						class="tx-10 tx-roboto tx-uppercase tx-spacing-1 tx-white op-3 mg-b-2 space-nowrap">Disk
-						Usage</p>
-					<h5 class="tx-lato tx-white tx-normal mg-b-0">82.02%</h5>
-				</div>
-				<span class="peity-bar"
-					data-peity='{ "fill": ["#8E4246"], "height": 35, "width": 60 }'>1,2,1,3,2,10,4,12,7</span>
-			</div>
-			<!-- d-flex -->
-
-			<div
-				class="d-flex align-items-center justify-content-between pd-x-15 mg-t-20">
-				<div>
-					<p
-						class="tx-10 tx-roboto tx-uppercase tx-spacing-1 tx-white op-3 mg-b-2 space-nowrap">Daily
-						Traffic</p>
-					<h5 class="tx-lato tx-white tx-normal mg-b-0">62,201</h5>
-				</div>
-				<span class="peity-bar"
-					data-peity='{ "fill": ["#9C7846"], "height": 35, "width": 60 }'>3,12,7,9,2,3,4,5,2</span>
-			</div>
 			<!-- d-flex -->
 		</div>
 		<!-- info-list -->
@@ -1044,32 +875,25 @@
 	<div class="br-mainpanel">
 		<div class="br-pageheader pd-y-15 pd-l-20">
 			<nav class="breadcrumb pd-0 mg-0 tx-12">
-				<a class="breadcrumb-item" href="index.html">Bracket</a> <a
-					class="breadcrumb-item" href="#">Tables</a> <span
-					class="breadcrumb-item active">Data Table</span>
+				<a class="breadcrumb-item" href="index.html">Admin</a> <a
+					class="breadcrumb-item" href="#">News management</a> <span
+					class="breadcrumb-item active">News list</span>
 			</nav>
 		</div>
 		<!-- br-pageheader -->
-		<div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30">
-			<h4 class="tx-gray-800 mg-b-5">Data Table</h4>
-			<p class="mg-b-0">DataTables is a plug-in for the jQuery
-				Javascript library.</p>
-		</div>
-
 		<div class="br-pagebody">
 			<div class="br-section-wrapper">
-				<h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-b-10">Basic
-					Responsive DataTable</h6>
-				<p class="mg-b-25 mg-lg-b-50">Searching, ordering and paging
-					goodness will be immediately added to the table, as shown in this
-					example.</p>
+				<h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-b-10">List
+					of news in the system</h6>
+				<p class="mg-b-25 mg-lg-b-50">You can view, edit and delete this
+					news.</p>
 
 				<div class="table-wrapper">
 					<table id="datatable1" class="table display responsive nowrap">
 						<thead>
 							<tr>
-								<th class="wd-15p">Title</th>
-								<th class="wd-15p">Created Time</th>
+								<th class="wd-15p" style="width: 55%;">Title</th>
+								<th class="wd-15p" style="width: 20%;">Created Time</th>
 								<th></th>
 								<th></th>
 							</tr>
@@ -1079,52 +903,17 @@
 								<tr>
 									<td>news.title</td>
 									<td>news.created_time</td>
-									<td><a href="update-task?id=${task.id}"><span
-											class="glyphicon glyphicon-pencil"></span></a></td>
-									<td><a href="delete-task?id=${task.id}"><span
-											class="glyphicon glyphicon-trash"></span></a></td>
+									<td align="center"><a href="update-task?id=${task.id}"><i
+											class="icon ion-edit"></i></a></td>
+									<td align="center"><a href="delete-task?id=${task.id}"><i
+											class="icon ion-android-delete"></i></a></td>
 								</tr>
 							</c:forEach>
-
-							<tr>
-								<td>Garrett</td>
-								<td>Winters</td>
-								<td><a href="update-task?id=${task.id}"><span
-										class="glyphicon glyphicon-pencil"></span></a></td>
-								<td><a href="delete-task?id=${task.id}"><span
-										class="glyphicon glyphicon-trash"></span></a></td>
-							</tr>
 						</tbody>
 					</table>
 				</div>
 				<!-- table-wrapper -->
 
-				<p
-					class="tx-11 tx-uppercase tx-spacing-2 mg-t-40 mg-b-10 tx-gray-600">Javascript
-					Code</p>
-				<pre>
-					<code class="javascript pd-20">$('#datatable1').DataTable({
-  responsive: true,
-  language: {
-    searchPlaceholder: 'Search...',
-    sSearch: '',
-    lengthMenu: '_MENU_ items/page',
-  }
-});</code>
-				</pre>
-
-				<p
-					class="tx-11 tx-uppercase tx-spacing-2 mg-t-40 mg-b-10 tx-gray-600">Javascript
-					Code</p>
-				<pre>
-					<code class="javascript pd-20">$('#datatable2').DataTable({
-  bLengthChange: false,
-  searching: false,
-  responsive: true
-});</code>
-				</pre>
-
-			</div>
 			<!-- br-section-wrapper -->
 		</div>
 		<!-- br-pagebody -->
@@ -1147,20 +936,23 @@
 	<!-- br-mainpanel -->
 	<!-- ########## END: MAIN PANEL ########## -->
 
-	<script src="../lib/jquery/jquery.js"></script>
-	<script src="../lib/popper.js/popper.js"></script>
-	<script src="../lib/bootstrap/bootstrap.js"></script>
-	<script src="../lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
-	<script src="../lib/moment/moment.js"></script>
-	<script src="../lib/jquery-ui/jquery-ui.js"></script>
-	<script src="../lib/jquery-switchbutton/jquery.switchButton.js"></script>
-	<script src="../lib/peity/jquery.peity.js"></script>
-	<script src="../lib/highlightjs/highlight.pack.js"></script>
-	<script src="../lib/datatables/jquery.dataTables.js"></script>
-	<script src="../lib/datatables-responsive/dataTables.responsive.js"></script>
-	<script src="../lib/select2/js/select2.min.js"></script>
+	<script src="../../static/lib/jquery/jquery.js"></script>
+	<script src="../../static/lib/popper.js/popper.js"></script>
+	<script src="../../static/lib/bootstrap/bootstrap.js"></script>
+	<script
+		src="../../static/lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
+	<script src="../../static/lib/moment/moment.js"></script>
+	<script src="../../static/lib/jquery-ui/jquery-ui.js"></script>
+	<script
+		src="../../static/lib/jquery-switchbutton/jquery.switchButton.js"></script>
+	<script src="../../static/lib/peity/jquery.peity.js"></script>
+	<script src="../../static/lib/highlightjs/highlight.pack.js"></script>
+	<script src="../../static/lib/datatables/jquery.dataTables.js"></script>
+	<script
+		src="../../static/lib/datatables-responsive/dataTables.responsive.js"></script>
+	<script src="../../static/lib/select2/js/select2.min.js"></script>
 
-	<script src="../js/bracket.js"></script>
+	<script src="../../static/js/bracket.js"></script>
 	<script>
 		$(function() {
 			'use strict';

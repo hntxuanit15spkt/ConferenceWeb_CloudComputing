@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <head>
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+<%@ page contentType="text/html; charset=UTF-8"%>
 <!-- Twitter -->
 <meta name="twitter:site" content="@themepixels">
 <meta name="twitter:creator" content="@themepixels">
@@ -111,19 +113,19 @@
 				<li class="nav-item"><a href="spinners.html" class="nav-link">Spinners</a></li>
 				<li class="nav-item"><a href="typography.html" class="nav-link">Typography</a></li>
 			</ul>
-			<a href="#" class="br-menu-link">
+			<a href="#" class="br-menu-link active show-sub">
 				<div class="br-menu-item">
-					<i class="menu-item-icon ion-ios-redo-outline tx-24"></i> <span
-						class="menu-item-label">Navigation</span> <i
+					<i class="menu-item-icon icon ion-ios-bookmarks-outline tx-20"></i>
+					<span class="menu-item-label">News management</span> <i
 						class="menu-item-arrow fa fa-angle-down"></i>
 				</div> <!-- menu-item -->
 			</a>
 			<!-- br-menu-link -->
 			<ul class="br-menu-sub nav flex-column">
-				<li class="nav-item"><a href="navigation.html" class="nav-link">Basic
-						Nav</a></li>
-				<li class="nav-item"><a href="navigation-layouts.html"
-					class="nav-link">Nav Layouts</a></li>
+				<li class="nav-item"><a href="/all-news"
+					class="nav-link">News list</a></li>
+				<li class="nav-item"><a href="/create-news"
+					class="nav-link active">Add news</a></li>
 			</ul>
 			<a href="#" class="br-menu-link">
 				<div class="br-menu-item">
@@ -149,7 +151,7 @@
 				<li class="nav-item"><a href="chart-peity.html"
 					class="nav-link">Peity</a></li>
 			</ul>
-			<a href="#" class="br-menu-link active show-sub">
+			<a href="#" class="br-menu-link">
 				<div class="br-menu-item">
 					<i class="menu-item-icon icon ion-ios-gear-outline tx-24"></i> <span
 						class="menu-item-label">Forms</span> <i

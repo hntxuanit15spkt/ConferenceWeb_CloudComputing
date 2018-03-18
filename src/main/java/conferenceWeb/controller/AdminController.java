@@ -21,8 +21,8 @@ public class AdminController {
     // Xem danh sách
     @GetMapping("/all-news")
     public String AllNews(HttpServletRequest request) {
-	request.setAttribute("lst_news", newsService.findAll());
-	request.setAttribute("mode", "MODE_TASKS");
+	//request.setAttribute("lst_news", newsService.findAll());
+	//request.setAttribute("mode", "MODE_TASKS");
 	return "all-news";
     }
 
