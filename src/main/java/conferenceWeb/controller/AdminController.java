@@ -86,7 +86,7 @@ public class AdminController {
 			request.setAttribute("message", "!Error! - Can not delete");
 		}
 		// request.setAttribute("mode", "MODE_NEW");
-		request.setAttribute("newss", newsService.findAll());
+		request.setAttribute("news", newsService.findAll());
 		return "all-news";
 	}
 }
