@@ -892,8 +892,10 @@
 					<table id="datatable1" class="table display responsive nowrap">
 						<thead>
 							<tr>
-								<th class="wd-15p" style="width: 55%;">Title</th>
+								<th class="wd-15p" style="width: 20%;">Title</th>
+								<th class="wd-15p" style="width: 30%;">Content</th>
 								<th class="wd-15p" style="width: 20%;">Created Time</th>
+								<th class="wd-15p" style="width: 20%;">Url image</th>
 								<th></th>
 								<th></th>
 							</tr>
@@ -901,11 +903,13 @@
 						<tbody>
 							<c:forEach var="news" items="${lst_news}">
 								<tr>
-									<td>news.title</td>
-									<td>news.created_time</td>
-									<td align="center"><a href="update-task?id=${task.id}"><i
+									<td>${news.title }</td>
+									<td>${news.content}</td>
+									<td>${news.date_created}</td>
+									<td>${news.image}</td>
+									<td align="center"><a href="update-task?id=${news.id}"><i
 											class="icon ion-edit"></i></a></td>
-									<td align="center"><a href="delete-task?id=${task.id}"><i
+									<td align="center"><a href="delete-task?id=${news.id}"><i
 											class="icon ion-android-delete"></i></a></td>
 								</tr>
 							</c:forEach>

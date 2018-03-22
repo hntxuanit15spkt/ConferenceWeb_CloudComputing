@@ -3,42 +3,80 @@ package conferenceWeb.model;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
-@Entity(name = "news")
+@Entity
+@Table(name = "news")
 public class News implements Serializable {
 
     @Id
+    @Column(name="id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    private int conference_id;
-
+    @Column(name="account_id")
     private int account_id;
 
+    @Column(name="title")
     private String title;
-
+    
     private String content;
 
-    private Date created_time;
+    @Column(name="date_created")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date date_created;
 
+    @Column(name="image")
     private String image;
 
     public News() {
 
     }
 
-    public News(int id, int conference_id, int account_id, String title, String content, Date create_time,
-	    String image) {
+    
+
+    public News(int id, int account_id, String title, String content, Date date_created, String image) {
 	super();
 	this.id = id;
-	this.conference_id = conference_id;
 	this.account_id = account_id;
 	this.title = title;
 	this.content = content;
-	this.created_time = create_time;
+	this.date_created = date_created;
 	this.image = image;
     }
+
+
+
+    public String getTitle() {
+        return title;
+    }
+
+
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+
+
+    public Date getDate_created() {
+        return date_created;
+    }
+
+
+
+    public void setDate_created(Date date_created) {
+        this.date_created = date_created;
+    }
+
+
 
     public int getId() {
 	return id;
@@ -46,14 +84,6 @@ public class News implements Serializable {
 
     public void setId(int id) {
 	this.id = id;
-    }
-
-    public int getConference_id() {
-	return conference_id;
-    }
-
-    public void setConference_id(int conference_id) {
-	this.conference_id = conference_id;
     }
 
     public int getAccount_id() {
@@ -64,28 +94,12 @@ public class News implements Serializable {
 	this.account_id = account_id;
     }
 
-    public String getTitle() {
-	return title;
-    }
-
-    public void setTitle(String title) {
-	this.title = title;
-    }
-
     public String getContent() {
 	return content;
     }
 
     public void setContent(String content) {
 	this.content = content;
-    }
-
-    public Date getCreate_time() {
-	return created_time;
-    }
-
-    public void setCreate_time(Date create_time) {
-	this.created_time = create_time;
     }
 
     public String getImage() {
