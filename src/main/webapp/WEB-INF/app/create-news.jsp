@@ -79,17 +79,17 @@
 			<!-- br-menu-link -->
 			<a href="#" class="br-menu-link">
 				<div class="br-menu-item">
-					<i class="menu-item-icon fa fa-address-book tx-20"></i>
-					<span class="menu-item-label">Account management</span> <i
+					<i class="menu-item-icon fa fa-address-book tx-20"></i> <span
+						class="menu-item-label">Account management</span> <i
 						class="menu-item-arrow fa fa-angle-down"></i>
 				</div> <!-- menu-item -->
 			</a>
 			<!-- br-menu-link -->
 			<ul class="br-menu-sub nav flex-column">
-				<li class="nav-item"><a href="#"
-					class="nav-link">Account list</a></li>
-				<li class="nav-item"><a href="#"
-					class="nav-link">Add account</a></li>
+				<li class="nav-item"><a href="#" class="nav-link">Account
+						list</a></li>
+				<li class="nav-item"><a href="#" class="nav-link">Add
+						account</a></li>
 			</ul>
 			<a href="#" class="br-menu-link active show-sub">
 				<div class="br-menu-item">
@@ -100,8 +100,8 @@
 			</a>
 			<!-- br-menu-link -->
 			<ul class="br-menu-sub nav flex-column">
-				<li class="nav-item"><a href="/all-news"
-					class="nav-link">News list</a></li>
+				<li class="nav-item"><a href="/all-news" class="nav-link">News
+						list</a></li>
 				<li class="nav-item"><a href="/create-news"
 					class="nav-link active">Add news</a></li>
 			</ul>
@@ -111,7 +111,7 @@
 						class="menu-item-label">Webpages management</span>
 				</div> <!-- menu-item -->
 			</a>
-			
+
 			<!-- br-menu-link -->
 			<ul class="br-menu-sub nav flex-column">
 				<li class="nav-item"><a href="background.html" class="nav-link">Background</a></li>
@@ -336,8 +336,8 @@
 				<!-- dropdown -->
 				<div class="dropdown">
 					<a href="" class="nav-link nav-link-profile" data-toggle="dropdown">
-						<span class="logged-name hidden-md-down">Katherine</span> <img
-						src="http://via.placeholder.com/64x64"
+						<span class="logged-name hidden-md-down"><%=session.getAttribute("username")%></span>
+						<img src="http://via.placeholder.com/64x64"
 						class="wd-32 rounded-circle" alt=""> <span
 						class="square-10 bg-success"></span>
 					</a>
@@ -888,7 +888,8 @@
 
 		<div class="br-pagebody">
 			<div class="br-section-wrapper">
-				<form action="form-validation.html" data-parsley-validate>
+				<form action="/save-news" data-parsley-validate>
+					<input type="hidden" name="id" value="${news.id}" />
 					<div class="wd-300">
 						<div class="d-md-flex mg-b-30">
 							<div class="form-group mg-b-0">
@@ -909,7 +910,12 @@
 					<h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-t-80 mg-b-10">Content</h6>
 
 					<div id="summernote">Hello, universe!</div>
-
+					<table>
+						<tr>
+							<td>Select photo:</td>
+							<td><input type="file" name="image" /></td>
+						</tr>
+					</table>
 					<button type="submit"
 						class="btn btn-info tx-11 pd-y-12 tx-uppercase tx-spacing-2">Post
 						news</button>
@@ -964,7 +970,7 @@
 
 			// Summernote editor
 			$('#summernote').summernote({
-				height : 450,
+				height : 300,
 				tooltip : false
 			})
 		});

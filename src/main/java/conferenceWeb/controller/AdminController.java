@@ -13,6 +13,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import conferenceWeb.model.News;
 import conferenceWeb.service.NewsService;
 
 @Controller // Gọi là một specialized form của @Component annotation. Đánh dấu class này
@@ -38,8 +40,12 @@ public class AdminController {
 
     //
     @GetMapping("/create-news")
-    public String CreateNews(HttpServletRequest request) {
-	// request.setAttribute("mode", "MODE_NEW");
+    public String CreateNews(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	HttpSession session = request.getSession();
+	String username = (String) session.getAttribute("username");
+	if (username == null) {
+	    response.sendRedirect("/login");
+	}
 	return "create-news";
     }
 
@@ -52,7 +58,8 @@ public class AdminController {
 
     //
     @PostMapping("/save-news")
-    public String SaveNews() {
+    public String SaveNews(@ModelAttribute News news, BindingResult bindingResult, HttpServletRequest request) {
+	news.setDate_created(new Date());
 	return "save-news";
     }
 
