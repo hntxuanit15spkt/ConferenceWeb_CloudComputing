@@ -335,7 +335,7 @@
 				<!-- dropdown -->
 				<div class="dropdown">
 					<a href="" class="nav-link nav-link-profile" data-toggle="dropdown">
-						<span class="logged-name hidden-md-down">Katherine</span> <img
+						<span class="logged-name hidden-md-down"><%=session.getAttribute("username")%></span> <img
 						src="http://via.placeholder.com/64x64"
 						class="wd-32 rounded-circle" alt=""> <span
 						class="square-10 bg-success"></span>
@@ -352,7 +352,7 @@
 									Favorites</a></li>
 							<li><a href=""><i class="icon ion-ios-folder"></i>
 									Collections</a></li>
-							<li><a href=""><i class="icon ion-power"></i> Sign Out</a></li>
+							<li><a href="/logout"><i class="icon ion-power"></i> Sign Out</a></li>
 						</ul>
 					</div>
 					<!-- dropdown-menu -->

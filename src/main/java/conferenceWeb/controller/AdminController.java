@@ -1,8 +1,11 @@
 package conferenceWeb.controller;
 
+import java.io.IOException;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,9 +26,13 @@ public class AdminController {
 
     // Xem danh sách
     @GetMapping("/all-news")
-    public String AllNews(HttpServletRequest request) {
+    public String AllNews(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	HttpSession session = request.getSession();
+	String username = (String) session.getAttribute("username");
+	if (username == null) {
+	    response.sendRedirect("/login");
+	}
 	request.setAttribute("lst_news", newsService.findAll());
-	// request.setAttribute("mode", "MODE_TASKS");
 	return "all-news";
     }
 
