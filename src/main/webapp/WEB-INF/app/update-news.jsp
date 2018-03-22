@@ -65,7 +65,7 @@
 
 	<!-- ########## START: LEFT PANEL ########## -->
 	<div class="br-logo">
-		<a href=""><span>[</span>bracket<span>]</span></a>
+		<a href=""><span>[</span>ISSCE<span>]</span></a>
 	</div>
 	<div class="br-sideleft overflow-y-auto">
 		<label class="sidebar-label pd-x-15 mg-t-20">Navigation</label>
@@ -878,19 +878,20 @@
 	<div class="br-mainpanel">
 		<div class="br-pageheader pd-y-15 pd-l-20">
 			<nav class="breadcrumb pd-0 mg-0 tx-12">
-				<a class="breadcrumb-item" href="index.html">Bracket</a> <a
-					class="breadcrumb-item" href="#">Forms</a> <span
-					class="breadcrumb-item active">Text Editor</span>
+				<a class="breadcrumb-item" href="index.html">ISSCE</a> <a
+					class="breadcrumb-item" href="#">News</a> <span
+					class="breadcrumb-item active">Update</span>
 			</nav>
 		</div>
 		<!-- br-pageheader -->
 		<div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30">
-			<h4 class="tx-gray-800 mg-b-5">Create News</h4>
+			<h4 class="tx-gray-800 mg-b-5">Update News</h4>
 		</div>
 
 		<div class="br-pagebody">
 			<div class="br-section-wrapper">
-				<form action="form-validation.html" data-parsley-validate>
+<!-- 				<form method="POST" action="form-validation.html save-news" data-parsley-validate> -->
+				<form method="POST" action="save-news" data-parsley-validate>
 					<div class="wd-300">
 						<div class="d-md-flex mg-b-30">
 							<div class="form-group mg-b-0">
@@ -899,7 +900,20 @@
 									Title: <span class="tx-danger">*</span>
 								</h6>
 								<input type="text" name="title" class="form-control wd-500"
-									placeholder="Enter title" required />
+									placeholder="${news.title }" required />
+							</div>
+							<!-- form-group -->
+							<!-- form-group -->
+						</div>
+						<!-- d-flex -->
+						<div class="d-md-flex mg-b-30">
+							<div class="form-group mg-b-0">
+								<h6
+									class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-t-80 mg-b-10">
+									Date Created: <span class="tx-danger">*</span>
+								</h6>
+								<input type="text" name="Date Created" class="form-control wd-500"
+									placeholder="${news.date_created }" required />
 							</div>
 							<!-- form-group -->
 							<!-- form-group -->
@@ -910,11 +924,10 @@
 
 					<h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-t-80 mg-b-10">Content</h6>
 
-					<div id="summernote">Hello, universe!</div>
+					<div id="summernote" <%="${news.content }" %>></div>
 
 					<button type="submit"
-						class="btn btn-info tx-11 pd-y-12 tx-uppercase tx-spacing-2">Post
-						news</button>
+						class="btn btn-info tx-11 pd-y-12 tx-uppercase tx-spacing-2">Save</button>
 
 				</form>
 
@@ -925,7 +938,7 @@
 
 		<footer class="br-footer">
 			<div class="footer-left">
-				<div class="mg-b-2">Copyright &copy; 2017. Bracket. All Rights
+				<div class="mg-b-2">Copyright &copy; 2017. Group_19 . All Rights
 					Reserved.</div>
 				<div>Attentively and carefully made by ThemePixels.</div>
 			</div>

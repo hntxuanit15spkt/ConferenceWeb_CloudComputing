@@ -12,7 +12,7 @@
 <meta name="twitter:site" content="@themepixels">
 <meta name="twitter:creator" content="@themepixels">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Bracket">
+<meta name="twitter:title" content="ICSSE">
 <meta name="twitter:description"
 	content="Premium Quality and Responsive UI for Dashboard.">
 <meta name="twitter:image"
@@ -64,7 +64,7 @@
 
 	<!-- ########## START: LEFT PANEL ########## -->
 	<div class="br-logo">
-		<a href=""><span>[</span>bracket<span>]</span></a>
+		<a href=""><span>[</span>ICSSE<span>]</span></a>
 	</div>
 	<div class="br-sideleft overflow-y-auto">
 		<label class="sidebar-label pd-x-15 mg-t-20">Navigation</label>
@@ -892,10 +892,11 @@
 					<table id="datatable1" class="table display responsive nowrap">
 						<thead>
 							<tr>
+								<th class="wd-15p" style="width: 10%;">No</th>
 								<th class="wd-15p" style="width: 20%;">Title</th>
 								<th class="wd-15p" style="width: 30%;">Content</th>
 								<th class="wd-15p" style="width: 20%;">Created Time</th>
-								<th class="wd-15p" style="width: 20%;">Url image</th>
+								<th class="wd-15p" style="width: 20%;">Username</th>
 								<th></th>
 								<th></th>
 							</tr>
@@ -903,13 +904,15 @@
 						<tbody>
 							<c:forEach var="news" items="${lst_news}">
 								<tr>
+									<td>${news.id }</td>
 									<td>${news.title }</td>
 									<td>${news.content}</td>
 									<td>${news.date_created}</td>
-									<td>${news.image}</td>
-									<td align="center"><a href="update-task?id=${news.id}"><i
+									<td>${news.username}</td>
+									
+									<td align="center"><a href="update-news?id=${news.id}"><i
 											class="icon ion-edit"></i></a></td>
-									<td align="center"><a href="delete-task?id=${news.id}"><i
+									<td align="center"><a href="delete-news?id=${news.id}"><i
 											class="icon ion-android-delete"></i></a></td>
 								</tr>
 							</c:forEach>
@@ -923,7 +926,7 @@
 		<!-- br-pagebody -->
 		<footer class="br-footer">
 			<div class="footer-left">
-				<div class="mg-b-2">Copyright &copy; 2017. Bracket. All Rights
+				<div class="mg-b-2">Copyright &copy; 2017. Group_19. All Rights
 					Reserved.</div>
 				<div>Attentively and carefully made by ThemePixels.</div>
 			</div>
