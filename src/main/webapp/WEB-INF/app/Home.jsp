@@ -58,7 +58,7 @@
 			<div class="container">
 				<div class="navbar-header">
 					<ul class="nav navbar-nav navbar-right">
-						<li class="active"><a href="TrangChu">HOME</a></li>
+						<li class="active"><a href="/">HOME</a></li>
 						<li><a href="about">ABOUT</a></li>
 						<li><a href="keynote-speaker">KEYNOTE SPEAKER</a></li>
 						<li><a href="program">PROGRAM</a></li>

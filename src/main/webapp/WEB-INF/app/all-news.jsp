@@ -389,8 +389,8 @@
 						<thead>
 							<tr>
 								<th class="wd-15p" style="width: 10%;">No</th>
-								<th class="wd-15p" style="width: 20%;">Title</th>
-								<th class="wd-15p" style="width: 30%;">Content</th>
+								<th class="wd-15p" style="width: 30%;">Title</th>
+<!-- 								<th class="wd-15p" style="width: 30%;">Content</th> -->
 								<th class="wd-15p" style="width: 20%;">Created Time</th>
 								<th class="wd-15p" style="width: 20%;">Username</th>
 								<th></th>
@@ -402,7 +402,7 @@
 								<tr>
 									<td>${news.id }</td>
 									<td>${news.title }</td>
-									<td>${news.content}</td>
+<%-- 									<td>${news.content}</td> --%>
 									<td>${news.date_created}</td>
 									<td>${news.username}</td>
 									

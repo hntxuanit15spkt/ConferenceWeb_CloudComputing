@@ -434,7 +434,7 @@
 						<div class="d-md-flex mg-b-30">
 							<div class="form-group mg-b-0">
 								<input type="hidden" name="id" class="form-control wd-500"
-									placeholder="${news.id }" />
+									placeholder="${news.id }"/>
 							</div>
 							<div class="form-group mg-b-0">
 								<h6
@@ -442,7 +442,7 @@
 									Title: <span class="tx-danger">*</span>
 								</h6>
 								<input type="text" name="title" class="form-control wd-500"
-									placeholder="${news.title }" />
+									placeholder="${news.title }"/>
 							</div>
 							<!-- form-group -->
 							<!-- form-group -->
