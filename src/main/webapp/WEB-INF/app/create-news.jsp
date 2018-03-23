@@ -220,9 +220,7 @@
 		<!-- Tab panes -->
 		<div class="tab-content">
 			<div class="tab-pane pos-absolute a-0 mg-t-60 overflow-y-auto active"
-				id="contacts" role="tabpanel">
-
-			</div>
+				id="contacts" role="tabpanel"></div>
 			<!-- #contacts -->
 
 
@@ -497,7 +495,8 @@
 
 		<div class="br-pagebody">
 			<div class="br-section-wrapper">
-				<form action="/save-news" data-parsley-validate>
+				<form method="POST" action="save-news" data-parsley-validate
+					id="myForm">
 					<input type="hidden" name="id" value="${news.id}" />
 					<div class="wd-300">
 						<div class="d-md-flex mg-b-30">
@@ -517,8 +516,8 @@
 					</div>
 
 					<h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-t-80 mg-b-10">Content</h6>
-
 					<div id="summernote">Hello, universe!</div>
+					<textarea name="content" style="display: none;"></textarea>
 					<table>
 						<tr>
 							<td>Select photo:</td>
@@ -581,7 +580,13 @@
 			$('#summernote').summernote({
 				height : 300,
 				tooltip : false
-			})
+			});
+
+			$('#myForm').submit(
+					function() {
+						$('textarea[name=content]').val(
+								$('#summernote').summernote('code'));
+					});
 		});
 	</script>
 </body>

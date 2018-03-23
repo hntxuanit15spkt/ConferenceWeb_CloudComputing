@@ -33,6 +33,9 @@ public class News implements Serializable {
 
 	@Column(name = "username")
 	private String username;
+	
+	@Column(name = "account_id")
+	private int account_id;
 
 	public News() {}
 
@@ -85,4 +88,12 @@ public class News implements Serializable {
 		this.username = username;
 	}
 
+	public int getAccount_id() {
+	    return account_id;
+	}
+
+	public void setAccount_id(int account_id) {
+	    this.account_id = account_id;
+	}
+	
 }
