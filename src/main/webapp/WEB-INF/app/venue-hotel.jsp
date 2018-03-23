@@ -8,7 +8,7 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <%@ page contentType="text/html; charset=UTF-8"%>
-<title>Home</title>
+<title>Contact</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--bootstrap & Jquery-->
 <link rel="stylesheet"
@@ -58,11 +58,11 @@
 			<div class="container">
 				<div class="navbar-header">
 					<ul class="nav navbar-nav navbar-right">
-						<li class="active"><a href="/">HOME</a></li>
+						<li><a href="/">HOME</a></li>
 						<li><a href="about">ABOUT</a></li>
 						<li><a href="keynote-speaker">KEYNOTE SPEAKER</a></li>
 						<li><a href="program">PROGRAM</a></li>
-						<li><a href="venue-hotel">VENUE & HOTEL</a></li>
+						<li class="active"><a href="venue-hotel">VENUE & HOTEL</a></li>
 						<li><a href="contact">CONTACT</a></li>
 
 					</ul>
@@ -139,53 +139,90 @@
 			<div class="row container">
 				<div class="col-md-9">
 					<div class="gioithieu">
-						<h3>Welcome to ICSSE 2017</h3>
-						<p class="p_home">System Science and Engineering has emerged
-							as a research field that covers a wide spectrum of modern
-							technology. A system can be considered as a collection of
-							entities and their interrelationships gathered together to form a
-							whole greater than the sum of the entities. It also involves
-							people, organizations, cultures, activities and
-							interrelationships among them. While systems composed of
-							autonomous subsystems are not new, increased data density,
-							connectivity and ubiquitous computational resources have
-							increased their interdependence and interaction complexity. This
-							has in turn made the already difficult job of planning,
-							developing and deploying complex systems even more difficult.</p>
-						<p class="p_home">Technology advancement not only provides
-							opportunities for improving system capabilities but also
-							introduces development risks that must be weighed and managed.
-							Thus, it is our goal to bring together scholars from all areas to
-							have a forum to discuss, demonstrate and exchange research ideas
-							in the scope of system science and engineering.</p>
-						<p class="p_home">The International Conference on System
-							Science and Engineering 2017 (ICSSE 2017) is an international
-							conference that will take place in Ho Chi Minh City during July
-							21-23, 2017. This event will provide a great opportunity for
-							scientists, engineers, and practitioners from all over the world
-							to present the latest system design concepts, research results,
-							developments and applications, as well as to facilitate
-							interactions between scholars and practitioners. ICSSE 2017 will
-							feature plenary speeches in emerging technology topics given by
-							world renowned scholars. The proceedings of ICSSE 2017 will be
-							published by the IEEE with EI indexing. In addition, selected
-							high-quality papers will be published by special issues of
-							SCI-indexed journals.</p>
-						<h3>ICSSE published proceedings</h3>
-						<p class="p_home">
-							ICSSE 2010 : <a href="">http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=5540658</a>
-						</p>
-						<p class="p_home">
-							ICSSE 2012 : <a href="">http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=6246741</a>
-						</p>
-						<p class="p_home">
-							ICSSE 2014 : <a href="">http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=6879759</a>
-						</p>
-						<p class="p_home">
-							ICSSE 2016 : <a href="">http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=7548195</a>
-						</p>
-						<p class="p_home">
-							ICSSE 2017 : <a href="">http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=8024255</a>
+						<div class="title_display">
+							<span style="background-color: inherit;"><b><span
+									style="color: #666;"><h5>VENUE AND HOTEL</h5></span></b></span>
+						</div>
+						<h5>
+							<span style="color: rgb(148, 189, 123);">-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span><br>
+						</h5>
+						<p>
+							<span style="font-size: 20px;"><br> <strong
+								style="color: #002060;">CONFERENCE VENUE:</strong><span
+								style="font-weight: bold; font-size: 20px; color: #002060;"><br>
+									<span style="font-size: 20px;"></span><span
+									style="font-size: 20px;"></span></span><span style="font-size: 16px;"><span
+									style="font-size: 20px; color: #c00000;"><span
+										style="font-size: 20px;"><span
+											style="font-weight: bold; font-size: 20px;"><br>
+												Ho Chi Minh City University of Technology and Education</span><br>
+									</span>No. 01 Vo Van Ngan Street, Thu Duc District, Ho Chi Minh City</span><br>
+									<br> </span><span style="color: #002060;"><img alt=""
+									src="http://icsse2017.hcmute.edu.vn/Resources/Images/SubDomain/icsse2017/HCMUTE.jpg"
+									style="width: 600px;"></span><br> <br> <span
+								style="font-weight: bold; color: #002060;"><br> <br>
+									<span style="font-size: 20px;">WELCOME DINNER VENUE:</span></span><br>
+								<span style="color: #c00000;"><br> <span
+									style="font-size: 11pt;"><span
+										style="font-weight: bold; font-size: 20px;">Kim Dung
+											Restaurant</span><span style="font-weight: bold;">&nbsp;</span><br>
+										<span style="font-size: 20px;">No. 02, Dang Van Bi
+											Street, Thu Duc District, Ho Chi Minh City<br> <br>
+											<img alt=""
+											src="http://icsse2017.hcmute.edu.vn/Resources/Images/SubDomain/icsse2017/kim%20dung%201.png"
+											style="width: 600px;"><br> <br> <img alt=""
+											src="http://icsse2017.hcmute.edu.vn/Resources/Images/SubDomain/icsse2017/kim%20dung%202.png"
+											style="width: 600px;"><br>
+									</span></span></span><br> <br> <span
+								style="font-size: 20px; text-align: left; font-weight: bold;"><span
+									style="font-size: 20px; color: #002060;">GALA BANQUET
+										DINNER VENUE:<br>
+								</span><br> <span style="font-size: 20px; color: #c00000;">Sesan
+										Restaurant&nbsp;</span><br> </span><span style="font-size: 18px;"><span
+									style="font-size: 20px; text-align: left;"><span
+										style="font-size: 18px;"><span
+											style="font-size: 20px; color: #c00000;">No. 14,
+												Einstein Street, Thu Duc District,&nbsp;<span
+												style="font-size: 20px; color: #c00000;">Ho Chi Minh
+													City</span><br>
+										</span><a href="http://sesan.com.vn/" target="_blank"><span
+												style="font-size: 20px;">http://sesan.com.vn/</span><br>
+										</a> </span><br> </span><span
+									style="text-align: left; background-color: #ffc000; color: #002060;"><span
+										style="font-size: 20px;"><strong>The best
+												paper awards to be delivered at the Gala Banquet</strong></span><br> </span></span><strong
+								style="font-size: 20px;"><br> </strong><img alt=""
+								src="http://icsse2017.hcmute.edu.vn/Resources/Images/SubDomain/icsse2017/Sesan%202.jpg"><br>
+								<br> <img alt=""
+								src="http://icsse2017.hcmute.edu.vn/Resources/Images/SubDomain/icsse2017/Sesan%201.jpg"
+								style="width: 600px;"><br> <br> <br> <strong><span
+									style="font-size: 20px; color: #002060;">HO CHI MINH
+										CITY TOUR</span></strong><br> <br> <span
+								style="font-size: 20px; color: #c00000;">Venue: </span><span
+								style="font-size: 20px; color: #c00000;">Gather at Ho Chi
+									Minh City Opera House&nbsp;</span><br> <span
+								style="font-size: 20px; color: #c00000;">&nbsp; &nbsp;
+									&nbsp; &nbsp; &nbsp; &nbsp; No.7, Cong Truong Lam Son Street,
+									District 1, HCMC</span><span style="font-size: 20px;"><br>
+							</span> <span style="color: #c00000;">&nbsp; &nbsp; &nbsp; &nbsp;
+									&nbsp; &nbsp;</span><span style="color: #002060;">&nbsp;</span><span
+								style="background-color: #ffc000; text-align: left; font-size: 20px; color: #002060;">Departure:
+									08:00am&nbsp;<br> <br>
+									<div style="text-align: center;">
+										<img alt=""
+											src="http://icsse2017.hcmute.edu.vn/Resources/Images/SubDomain/icsse2017/Nha%20hat%201.jpg">
+									</div>
+							</span><span style="color: #002060;"><br> </span><img alt=""
+								src="http://icsse2017.hcmute.edu.vn/Resources/Images/SubDomain/icsse2017/nha%20hat%203.jpg"><br>
+								<br> <strong style="color: #002060;">INFORMATION
+									ABOUT HOTEL IN HO CHI MINH CITY</strong><br> </span><span
+								style="font-size: 18px; color: #002060;"><br> <strong>
+									Please visit&nbsp;<span style="font-size: 18px;"><a
+										href="https://www.tripadvisor.co.uk" target="_blank"><span
+											style="font-size: 24px;">https://www.tripadvisor.co.uk</span></a><span
+										style="font-family: &amp; quot;times new roman&amp;quot;;">&nbsp;</span></span>to
+									find out all information about hotel in HCMC.
+							</strong><br> <br> </span><br>
 						</p>
 					</div>
 
@@ -197,7 +234,7 @@
 							News</h3>
 						<div style="padding-top: 10px;">
 							<c:forEach var="news" items="${lst_news}">
-								<p style="color: #b5150d;">Date created 
+								<p style="color: #b5150d;">
 									<fmt:formatDate pattern="yyyy/MM/dd"
 										value="${news.date_created}" />
 								</p>
@@ -248,8 +285,8 @@
 											<ul class="">
 												<li><a class="non-textdecoration lstfooter" href="program">Program</a></li>
 												<li style="padding-top: 15px;"><a
-													class="non-textdecoration lstfooter" href="venue-hotel">Venue &
-														hotel</a></li>
+													class="non-textdecoration lstfooter" href="venue-hotel">Venue
+														& hotel</a></li>
 												<li style="padding-top: 15px;"><a
 													class="non-textdecoration lstfooter" href="contact">Contact</a></li>
 											</ul>

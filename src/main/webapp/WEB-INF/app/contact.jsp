@@ -8,7 +8,7 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <%@ page contentType="text/html; charset=UTF-8"%>
-<title>Home</title>
+<title>Contact</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--bootstrap & Jquery-->
 <link rel="stylesheet"
@@ -58,12 +58,12 @@
 			<div class="container">
 				<div class="navbar-header">
 					<ul class="nav navbar-nav navbar-right">
-						<li class="active"><a href="/">HOME</a></li>
+						<li><a href="/">HOME</a></li>
 						<li><a href="about">ABOUT</a></li>
 						<li><a href="keynote-speaker">KEYNOTE SPEAKER</a></li>
 						<li><a href="program">PROGRAM</a></li>
 						<li><a href="venue-hotel">VENUE & HOTEL</a></li>
-						<li><a href="contact">CONTACT</a></li>
+						<li class="active"><a href="contact">CONTACT</a></li>
 
 					</ul>
 				</div>
@@ -139,54 +139,44 @@
 			<div class="row container">
 				<div class="col-md-9">
 					<div class="gioithieu">
-						<h3>Welcome to ICSSE 2017</h3>
-						<p class="p_home">System Science and Engineering has emerged
-							as a research field that covers a wide spectrum of modern
-							technology. A system can be considered as a collection of
-							entities and their interrelationships gathered together to form a
-							whole greater than the sum of the entities. It also involves
-							people, organizations, cultures, activities and
-							interrelationships among them. While systems composed of
-							autonomous subsystems are not new, increased data density,
-							connectivity and ubiquitous computational resources have
-							increased their interdependence and interaction complexity. This
-							has in turn made the already difficult job of planning,
-							developing and deploying complex systems even more difficult.</p>
-						<p class="p_home">Technology advancement not only provides
-							opportunities for improving system capabilities but also
-							introduces development risks that must be weighed and managed.
-							Thus, it is our goal to bring together scholars from all areas to
-							have a forum to discuss, demonstrate and exchange research ideas
-							in the scope of system science and engineering.</p>
-						<p class="p_home">The International Conference on System
-							Science and Engineering 2017 (ICSSE 2017) is an international
-							conference that will take place in Ho Chi Minh City during July
-							21-23, 2017. This event will provide a great opportunity for
-							scientists, engineers, and practitioners from all over the world
-							to present the latest system design concepts, research results,
-							developments and applications, as well as to facilitate
-							interactions between scholars and practitioners. ICSSE 2017 will
-							feature plenary speeches in emerging technology topics given by
-							world renowned scholars. The proceedings of ICSSE 2017 will be
-							published by the IEEE with EI indexing. In addition, selected
-							high-quality papers will be published by special issues of
-							SCI-indexed journals.</p>
-						<h3>ICSSE published proceedings</h3>
-						<p class="p_home">
-							ICSSE 2010 : <a href="">http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=5540658</a>
+						<div class="title_display">
+							<span style="background-color: inherit;"><b><span
+									style="color: #666;"><h5>CONTACT</h5></span></b></span>
+						</div>
+						<h5>
+							<span style="color: rgb(148, 189, 123);">-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span><br>
+						</h5>
+						<div class="articleTitle"><h3>
+							<span style="color: rgb(57, 132, 198);"><a href="http://icsse2017.hcmute.edu.vn/?ArticleId=b4031ebe-e802-4402-a49a-5769943872a5">CONTACT
+								INFORMATION</a></span>
+						</h3></div>
+						<p>
+							<br> <br>
 						</p>
-						<p class="p_home">
-							ICSSE 2012 : <a href="">http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=6246741</a>
-						</p>
-						<p class="p_home">
-							ICSSE 2014 : <a href="">http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=6879759</a>
-						</p>
-						<p class="p_home">
-							ICSSE 2016 : <a href="">http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=7548195</a>
-						</p>
-						<p class="p_home">
-							ICSSE 2017 : <a href="">http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=8024255</a>
-						</p>
+						<div class="articleContent">
+							<br> <br> <strong style="color: #002060;">CONFERENCE&nbsp;</strong><br
+								style="color: #002060;"> <span style="color: #002060;">Email:
+								icsse2017@hcmute.edu.vn</span><br style="color: #002060;"> <span
+								style="color: #002060;">Location: HCMC University of
+								Technology and Education</span><br style="color: #002060;"> <span
+								style="color: #002060;">01 Vo Van Ngan Street, Linh Chieu
+								Ward, Thu Duc District, Ho Chi Minh City&nbsp;</span><br
+								style="color: #002060;"> <br style="color: #002060;">
+							<strong style="color: #002060;">VIETNAM</strong><br
+								style="color: #002060;"> <span style="color: #002060;">1.
+								A/P. Hoang An Quoc - Email: hanquoc@hcmute.edu.vn</span><br
+								style="color: #002060;"> <span style="color: #002060;">2.
+								A/P. Do Thanh Trung - Email: trungdt@hcmute.edu.vn</span><br
+								style="color: #002060;"> <br style="color: #002060;">
+							<strong style="color: #002060;">TAIWAN</strong><br
+								style="color: #002060;"> <span style="color: #002060;">Prof.
+								Yo-Ping Huang - Email:&nbsp;yphuang@ntut.edu.tw<br> <br>
+								<br> <br>
+							</span>
+							<iframe
+								src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d1959.2389135249543!2d106.77207909423393!3d10.851215234929542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3175270ad28d48ab%3A0xa6c02de0a7c40d6c!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBTxrAgcGjhuqFtIEvhu7kgdGh14bqtdCBUcC4gSOG7kyBDaMOtIE1pbmgsIDEgVsO1IFbEg24gTmfDom4sIFBoxrDhu51uZyBMaW5oIENoaeG7g3UsIExpbmggQ2hp4buDdSwgVGjhu6cgxJDhu6ljLCBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!3m2!1d10.8510564!2d106.77201219999999!5e0!3m2!1svi!2s!4v1483930909433"
+								style="border: 0px;" width="600" height="450" frameborder="0"></iframe>
+						</div>
 					</div>
 
 				</div>
@@ -197,7 +187,7 @@
 							News</h3>
 						<div style="padding-top: 10px;">
 							<c:forEach var="news" items="${lst_news}">
-								<p style="color: #b5150d;">Date created 
+								<p style="color: #b5150d;">
 									<fmt:formatDate pattern="yyyy/MM/dd"
 										value="${news.date_created}" />
 								</p>
