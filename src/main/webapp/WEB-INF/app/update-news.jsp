@@ -102,8 +102,8 @@
 			<ul class="br-menu-sub nav flex-column">
 				<li class="nav-item"><a href="/all-news" class="nav-link">News
 						list</a></li>
-				<li class="nav-item"><a href="/create-news"
-					class="nav-link">Add news</a></li>
+				<li class="nav-item"><a href="/create-news" class="nav-link">Add
+						news</a></li>
 				<li class="nav-item"><a href="/create-news"
 					class="nav-link active">Update news</a></li>
 			</ul>
@@ -447,7 +447,7 @@
 
 		<div class="br-pagebody">
 			<div class="br-section-wrapper">
-<!-- 				<form method="POST" action="form-validation.html save-news" data-parsley-validate> -->
+				<!-- 				<form method="POST" action="form-validation.html save-news" data-parsley-validate> -->
 				<form method="POST" action="save-news" data-parsley-validate>
 					<div class="wd-300">
 						<div class="d-md-flex mg-b-30">
@@ -457,7 +457,7 @@
 									Title: <span class="tx-danger">*</span>
 								</h6>
 								<input type="text" name="title" class="form-control wd-500"
-									placeholder="${news.title }" required />
+									placeholder="${news.title }" />
 							</div>
 							<!-- form-group -->
 							<!-- form-group -->
@@ -469,8 +469,8 @@
 									class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-t-80 mg-b-10">
 									Date Created: <span class="tx-danger">*</span>
 								</h6>
-								<input type="text" name="Date Created" class="form-control wd-500"
-									placeholder="${news.date_created }" required />
+								<input type="text" name="Date Created"
+									class="form-control wd-500" placeholder="${news.date_created }"/>
 							</div>
 							<!-- form-group -->
 							<!-- form-group -->
@@ -481,8 +481,18 @@
 
 					<h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-t-80 mg-b-10">Content</h6>
 
-					<div id="summernote" <%="${news.content }" %>></div>
-
+					<div id="summernote">${news.content }</div>
+					<div class="d-md-flex mg-b-30">
+							<div class="form-group mg-b-0">
+								<input type="hidden" name="id" class="form-control wd-500" placeholder="${news.id }"/>
+							</div>
+							<div class="form-group mg-b-0">
+								<input type="hidden" name="username" class="form-control wd-500" placeholder="${news.username }"/>
+							</div>
+							
+							<!-- form-group -->
+							<!-- form-group -->
+					</div>
 					<button type="submit"
 						class="btn btn-info tx-11 pd-y-12 tx-uppercase tx-spacing-2">Save</button>
 
@@ -495,8 +505,8 @@
 
 		<footer class="br-footer">
 			<div class="footer-left">
-				<div class="mg-b-2">Copyright &copy; 2017. Group_19 . All Rights
-					Reserved.</div>
+				<div class="mg-b-2">Copyright &copy; 2017. Group_19 . All
+					Rights Reserved.</div>
 				<div>Attentively and carefully made by ThemePixels.</div>
 			</div>
 			<div class="footer-right d-flex align-items-center">
