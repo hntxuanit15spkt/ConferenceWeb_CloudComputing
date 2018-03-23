@@ -8,7 +8,7 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <%@ page contentType="text/html; charset=UTF-8"%>
-<title>Home</title>
+<title>News</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--bootstrap & Jquery-->
 <link rel="stylesheet"
@@ -60,10 +60,10 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li class="active"><a href="/">HOME</a></li>
 						<li><a href="News">ABOUT</a></li>
-						<li><a href="News">KEYNOTE SPEAKER</a></li>
+						<li><a href="keynote-speaker">KEYNOTE SPEAKER</a></li>
 						<li><a href="Contact">PROGRAM</a></li>
 						<li><a href="Contact">VENUE & HOTEL</a></li>
-						<li><a href="Contact">CONTACT</a></li>
+						<li><a href="contact">CONTACT</a></li>
 
 					</ul>
 				</div>
@@ -139,9 +139,15 @@
 			<div class="row container">
 				<div class="col-md-9">
 					<div class="gioithieu">
-						<h3>${onews.title}</h3>
-						<br/><br/>
-						<div>${onews.content}</div>
+						<div class="title_display">
+							<span style="background-color: inherit;"><b><span
+									style="color: #666;"><h3>${currnews.title}</h3></span></b></span>
+						</div>
+						<h5>
+							<span style="color: rgb(148, 189, 123);">-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span><br>
+						</h5>
+						<br />
+						<div>${currnews.content}</div>
 					</div>
 
 				</div>
@@ -195,7 +201,7 @@
 												<li style="padding-top: 15px;"><a
 													class="non-textdecoration lstfooter" href="#">About</a></li>
 												<li style="padding-top: 15px;"><a
-													class="non-textdecoration lstfooter" href="#">Keynote
+													class="non-textdecoration lstfooter" href="keynote-speaker">Keynote
 														speaker</a></li>
 											</ul>
 										</div>
@@ -206,7 +212,7 @@
 													class="non-textdecoration lstfooter" href="">Venue &
 														hotel</a></li>
 												<li style="padding-top: 15px;"><a
-													class="non-textdecoration lstfooter" href="">Contact</a></li>
+													class="non-textdecoration lstfooter" href="contact">Contact</a></li>
 											</ul>
 										</div>
 									</div>
