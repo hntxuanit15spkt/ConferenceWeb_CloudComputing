@@ -55,7 +55,11 @@ public class AdminController {
 	@PostMapping("/save-news")
 	public String SaveNews(@ModelAttribute News news, BindingResult bindingResult, HttpServletRequest request) {
 		news.setDate_created(new Date());
-		
+		System.out.println("id: "+news.getId());
+		System.out.println("title: "+news.getTitle());
+		System.out.println("content: "+news.getContent());
+		System.out.println("date: "+news.getDate_created());
+		System.out.println("username: "+news.getUsername());
 		try {
 			newsService.save(news);
 			request.setAttribute("message", "Successfull");
@@ -63,7 +67,7 @@ public class AdminController {
 			request.setAttribute("message", "Error");		
 		}
 		
-		request.setAttribute("news",newsService.findAll());
+		request.setAttribute("lst_news",newsService.findAll());
 		return "all-news";
 	}
 
@@ -86,7 +90,7 @@ public class AdminController {
 			request.setAttribute("message", "!Error! - Can not delete");
 		}
 		// request.setAttribute("mode", "MODE_NEW");
-		request.setAttribute("news", newsService.findAll());
+		request.setAttribute("lst_news", newsService.findAll());
 		return "all-news";
 	}
 }

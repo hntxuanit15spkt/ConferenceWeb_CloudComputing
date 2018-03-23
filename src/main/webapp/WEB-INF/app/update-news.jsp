@@ -65,7 +65,7 @@
 
 	<!-- ########## START: LEFT PANEL ########## -->
 	<div class="br-logo">
-		<a href=""><span>[</span>ISSCE<span>]</span></a>
+		<a href="/"><span>[</span>ICSSE<span>]</span></a>
 	</div>
 	<div class="br-sideleft overflow-y-auto">
 		<label class="sidebar-label pd-x-15 mg-t-20">Navigation</label>
@@ -159,29 +159,10 @@
 		<!-- br-header-left -->
 		<div class="br-header-right">
 			<nav class="nav">
-				<div class="dropdown">
-					<a href="" class="nav-link pd-x-7 pos-relative"
-						data-toggle="dropdown"> <i
-						class="icon ion-ios-email-outline tx-24"></i> <!-- start: if statement -->
-						<span
-						class="square-8 bg-danger pos-absolute t-15 r-0 rounded-circle"></span>
-						<!-- end: if statement -->
-					</a>
-				</div>
-				<!-- dropdown -->
-				<div class="dropdown">
-					<a href="" class="nav-link pd-x-7 pos-relative"
-						data-toggle="dropdown"> <i
-						class="icon ion-ios-bell-outline tx-24"></i> <!-- start: if statement -->
-						<span
-						class="square-8 bg-danger pos-absolute t-15 r-5 rounded-circle"></span>
-						<!-- end: if statement -->
-					</a>
-				</div>
 				<!-- dropdown -->
 				<div class="dropdown">
 					<a href="" class="nav-link nav-link-profile" data-toggle="dropdown">
-						<span class="logged-name hidden-md-down">Katherine</span> <img
+						<span class="logged-name hidden-md-down"><%=session.getAttribute("username")%></span> <img
 						src="http://via.placeholder.com/64x64"
 						class="wd-32 rounded-circle" alt=""> <span
 						class="square-10 bg-success"></span>
@@ -452,6 +433,10 @@
 					<div class="wd-300">
 						<div class="d-md-flex mg-b-30">
 							<div class="form-group mg-b-0">
+								<input type="hidden" name="id" class="form-control wd-500"
+									placeholder="${news.id }" />
+							</div>
+							<div class="form-group mg-b-0">
 								<h6
 									class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-t-80 mg-b-10">
 									Title: <span class="tx-danger">*</span>
@@ -470,7 +455,7 @@
 									Date Created: <span class="tx-danger">*</span>
 								</h6>
 								<input type="text" name="Date Created"
-									class="form-control wd-500" placeholder="${news.date_created }"/>
+									class="form-control wd-500" placeholder="${news.date_created }" />
 							</div>
 							<!-- form-group -->
 							<!-- form-group -->
@@ -481,17 +466,14 @@
 
 					<h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-t-80 mg-b-10">Content</h6>
 
-					<div id="summernote">${news.content }</div>
+					<div id="summernote">${news.content}</div>
 					<div class="d-md-flex mg-b-30">
-							<div class="form-group mg-b-0">
-								<input type="hidden" name="id" class="form-control wd-500" placeholder="${news.id }"/>
-							</div>
-							<div class="form-group mg-b-0">
-								<input type="hidden" name="username" class="form-control wd-500" placeholder="${news.username }"/>
-							</div>
-							
-							<!-- form-group -->
-							<!-- form-group -->
+						<div class="form-group mg-b-0">
+							<input type="hidden" name="username" class="form-control wd-500"
+								placeholder="${news.username }" />
+						</div>
+						<!-- form-group -->
+						<!-- form-group -->
 					</div>
 					<button type="submit"
 						class="btn btn-info tx-11 pd-y-12 tx-uppercase tx-spacing-2">Save</button>

@@ -12,7 +12,7 @@
 <meta name="twitter:site" content="@themepixels">
 <meta name="twitter:creator" content="@themepixels">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Bracket">
+<meta name="twitter:title" content="ICSSE">
 <meta name="twitter:description"
 	content="Premium Quality and Responsive UI for Dashboard.">
 <meta name="twitter:image"
@@ -37,7 +37,7 @@
 	content="Premium Quality and Responsive UI for Dashboard.">
 <meta name="author" content="ThemePixels">
 
-<title>Text Editor Design - Bracket Responsive Bootstrap 4 Admin
+<title>Data Table Design - Bracket Responsive Bootstrap 4 Admin
 	Template</title>
 
 <!-- vendor css -->
@@ -51,10 +51,9 @@
 	href="../../static/lib/jquery-switchbutton/jquery.switchButton.css"
 	rel="stylesheet">
 <link href="../../static/lib/highlightjs/github.css" rel="stylesheet">
-<link href="../../static/lib/medium-editor/medium-editor.css"
+<link href="../../static/lib/datatables/jquery.dataTables.css"
 	rel="stylesheet">
-<link href="../../static/lib/medium-editor/default.css" rel="stylesheet">
-<link href="../../static/lib/summernote/summernote-bs4.css"
+<link href="../../static/lib/select2/css/select2.min.css"
 	rel="stylesheet">
 
 <!-- Bracket CSS -->
@@ -65,7 +64,7 @@
 
 	<!-- ########## START: LEFT PANEL ########## -->
 	<div class="br-logo">
-		<a href=""><span>[</span>bracket<span>]</span></a>
+		<a href=""><span>[</span>ICSSE<span>]</span></a>
 	</div>
 	<div class="br-sideleft overflow-y-auto">
 		<label class="sidebar-label pd-x-15 mg-t-20">Navigation</label>
@@ -79,17 +78,17 @@
 			<!-- br-menu-link -->
 			<a href="#" class="br-menu-link">
 				<div class="br-menu-item">
-					<i class="menu-item-icon fa fa-address-book tx-20"></i> <span
-						class="menu-item-label">Account management</span> <i
+					<i class="menu-item-icon fa fa-address-book tx-20"></i>
+					<span class="menu-item-label">Account management</span> <i
 						class="menu-item-arrow fa fa-angle-down"></i>
 				</div> <!-- menu-item -->
 			</a>
 			<!-- br-menu-link -->
 			<ul class="br-menu-sub nav flex-column">
-				<li class="nav-item"><a href="#" class="nav-link">Account
-						list</a></li>
-				<li class="nav-item"><a href="#" class="nav-link">Add
-						account</a></li>
+				<li class="nav-item"><a href="/all-accounts"
+					class="nav-link active">Accounts list</a></li>
+				<li class="nav-item"><a href="create-account"
+					class="nav-link">Add account</a></li>
 			</ul>
 			<a href="#" class="br-menu-link active show-sub">
 				<div class="br-menu-item">
@@ -100,10 +99,10 @@
 			</a>
 			<!-- br-menu-link -->
 			<ul class="br-menu-sub nav flex-column">
-				<li class="nav-item"><a href="/all-news" class="nav-link">News
-						list</a></li>
+				<li class="nav-item"><a href="/all-news"
+					class="nav-link">News list</a></li>
 				<li class="nav-item"><a href="/create-news"
-					class="nav-link active">Add news</a></li>
+					class="nav-link">Add news</a></li>
 			</ul>
 			<a href="#" class="br-menu-link">
 				<div class="br-menu-item">
@@ -111,7 +110,7 @@
 						class="menu-item-label">Webpages management</span>
 				</div> <!-- menu-item -->
 			</a>
-
+			
 			<!-- br-menu-link -->
 			<ul class="br-menu-sub nav flex-column">
 				<li class="nav-item"><a href="background.html" class="nav-link">Background</a></li>
@@ -157,11 +156,187 @@
 		<!-- br-header-left -->
 		<div class="br-header-right">
 			<nav class="nav">
+				<div class="dropdown">
+					<a href="" class="nav-link pd-x-7 pos-relative"
+						data-toggle="dropdown"> <i
+						class="icon ion-ios-email-outline tx-24"></i> <!-- start: if statement -->
+						<span
+						class="square-8 bg-danger pos-absolute t-15 r-0 rounded-circle"></span>
+						<!-- end: if statement -->
+					</a>
+					<div class="dropdown-menu dropdown-menu-header wd-300 pd-0-force">
+						<div
+							class="d-flex align-items-center justify-content-between pd-y-10 pd-x-20 bd-b bd-gray-200">
+							<label
+								class="tx-12 tx-info tx-uppercase tx-semibold tx-spacing-2 mg-b-0">Messages</label>
+							<a href="" class="tx-11">+ Add New Message</a>
+						</div>
+						<!-- d-flex -->
+
+						<div class="media-list">
+							<!-- loop starts here -->
+							<a href="" class="media-list-link">
+								<div class="media pd-x-20 pd-y-15">
+									<img src="http://via.placeholder.com/280x280"
+										class="wd-40 rounded-circle" alt="">
+									<div class="media-body">
+										<div
+											class="d-flex align-items-center justify-content-between mg-b-5">
+											<p class="mg-b-0 tx-medium tx-gray-800 tx-14">Donna Seay</p>
+											<span class="tx-11 tx-gray-500">2 minutes ago</span>
+										</div>
+										<!-- d-flex -->
+										<p class="tx-12 mg-b-0">A wonderful serenity has taken
+											possession of my entire soul, like these sweet mornings of
+											spring.</p>
+									</div>
+								</div> <!-- media -->
+							</a>
+							<!-- loop ends here -->
+							<a href="" class="media-list-link read">
+								<div class="media pd-x-20 pd-y-15">
+									<img src="http://via.placeholder.com/280x280"
+										class="wd-40 rounded-circle" alt="">
+									<div class="media-body">
+										<div
+											class="d-flex align-items-center justify-content-between mg-b-5">
+											<p class="mg-b-0 tx-medium tx-gray-800 tx-14">Samantha
+												Francis</p>
+											<span class="tx-11 tx-gray-500">3 hours ago</span>
+										</div>
+										<!-- d-flex -->
+										<p class="tx-12 mg-b-0">My entire soul, like these sweet
+											mornings of spring.</p>
+									</div>
+								</div> <!-- media -->
+							</a> <a href="" class="media-list-link read">
+								<div class="media pd-x-20 pd-y-15">
+									<img src="http://via.placeholder.com/280x280"
+										class="wd-40 rounded-circle" alt="">
+									<div class="media-body">
+										<div
+											class="d-flex align-items-center justify-content-between mg-b-5">
+											<p class="mg-b-0 tx-medium tx-gray-800 tx-14">Robert
+												Walker</p>
+											<span class="tx-11 tx-gray-500">5 hours ago</span>
+										</div>
+										<!-- d-flex -->
+										<p class="tx-12 mg-b-0">I should be incapable of drawing a
+											single stroke at the present moment...</p>
+									</div>
+								</div> <!-- media -->
+							</a> <a href="" class="media-list-link read">
+								<div class="media pd-x-20 pd-y-15">
+									<img src="http://via.placeholder.com/280x280"
+										class="wd-40 rounded-circle" alt="">
+									<div class="media-body">
+										<div
+											class="d-flex align-items-center justify-content-between mg-b-5">
+											<p class="mg-b-0 tx-medium tx-gray-800 tx-14">Larry Smith</p>
+											<span class="tx-11 tx-gray-500">Yesterday</span>
+										</div>
+										<!-- d-flex -->
+										<p class="tx-12 mg-b-0">When, while the lovely valley
+											teems with vapour around me, and the meridian sun strikes...</p>
+									</div>
+								</div> <!-- media -->
+							</a>
+							<div class="pd-y-10 tx-center bd-t">
+								<a href="" class="tx-12"><i class="fa fa-angle-down mg-r-5"></i>
+									Show All Messages</a>
+							</div>
+						</div>
+						<!-- media-list -->
+					</div>
+					<!-- dropdown-menu -->
+				</div>
+				<!-- dropdown -->
+				<div class="dropdown">
+					<a href="" class="nav-link pd-x-7 pos-relative"
+						data-toggle="dropdown"> <i
+						class="icon ion-ios-bell-outline tx-24"></i> <!-- start: if statement -->
+						<span
+						class="square-8 bg-danger pos-absolute t-15 r-5 rounded-circle"></span>
+						<!-- end: if statement -->
+					</a>
+					<div class="dropdown-menu dropdown-menu-header wd-300 pd-0-force">
+						<div
+							class="d-flex align-items-center justify-content-between pd-y-10 pd-x-20 bd-b bd-gray-200">
+							<label
+								class="tx-12 tx-info tx-uppercase tx-semibold tx-spacing-2 mg-b-0">Notifications</label>
+							<a href="" class="tx-11">Mark All as Read</a>
+						</div>
+						<!-- d-flex -->
+
+						<div class="media-list">
+							<!-- loop starts here -->
+							<a href="" class="media-list-link read">
+								<div class="media pd-x-20 pd-y-15">
+									<img src="http://via.placeholder.com/280x280"
+										class="wd-40 rounded-circle" alt="">
+									<div class="media-body">
+										<p class="tx-13 mg-b-0 tx-gray-700">
+											<strong class="tx-medium tx-gray-800">Suzzeth
+												Bungaos</strong> tagged you and 18 others in a post.
+										</p>
+										<span class="tx-12">October 03, 2017 8:45am</span>
+									</div>
+								</div> <!-- media -->
+							</a>
+							<!-- loop ends here -->
+							<a href="" class="media-list-link read">
+								<div class="media pd-x-20 pd-y-15">
+									<img src="http://via.placeholder.com/280x280"
+										class="wd-40 rounded-circle" alt="">
+									<div class="media-body">
+										<p class="tx-13 mg-b-0 tx-gray-700">
+											<strong class="tx-medium tx-gray-800">Mellisa Brown</strong>
+											appreciated your work <strong class="tx-medium tx-gray-800">The
+												Social Network</strong>
+										</p>
+										<span class="tx-12">October 02, 2017 12:44am</span>
+									</div>
+								</div> <!-- media -->
+							</a> <a href="" class="media-list-link read">
+								<div class="media pd-x-20 pd-y-15">
+									<img src="http://via.placeholder.com/280x280"
+										class="wd-40 rounded-circle" alt="">
+									<div class="media-body">
+										<p class="tx-13 mg-b-0 tx-gray-700">
+											20+ new items added are for sale in your <strong
+												class="tx-medium tx-gray-800">Sale Group</strong>
+										</p>
+										<span class="tx-12">October 01, 2017 10:20pm</span>
+									</div>
+								</div> <!-- media -->
+							</a> <a href="" class="media-list-link read">
+								<div class="media pd-x-20 pd-y-15">
+									<img src="http://via.placeholder.com/280x280"
+										class="wd-40 rounded-circle" alt="">
+									<div class="media-body">
+										<p class="tx-13 mg-b-0 tx-gray-700">
+											<strong class="tx-medium tx-gray-800">Julius Erving</strong>
+											wants to connect with you on your conversation with <strong
+												class="tx-medium tx-gray-800">Ronnie Mara</strong>
+										</p>
+										<span class="tx-12">October 01, 2017 6:08pm</span>
+									</div>
+								</div> <!-- media -->
+							</a>
+							<div class="pd-y-10 tx-center bd-t">
+								<a href="" class="tx-12"><i class="fa fa-angle-down mg-r-5"></i>
+									Show All Notifications</a>
+							</div>
+						</div>
+						<!-- media-list -->
+					</div>
+					<!-- dropdown-menu -->
+				</div>
 				<!-- dropdown -->
 				<div class="dropdown">
 					<a href="" class="nav-link nav-link-profile" data-toggle="dropdown">
-						<span class="logged-name hidden-md-down"><%=session.getAttribute("username")%></span>
-						<img src="http://via.placeholder.com/64x64"
+						<span class="logged-name hidden-md-down"><%=session.getAttribute("username")%></span> <img
+						src="http://via.placeholder.com/64x64"
 						class="wd-32 rounded-circle" alt=""> <span
 						class="square-10 bg-success"></span>
 					</a>
@@ -177,7 +352,7 @@
 									Favorites</a></li>
 							<li><a href=""><i class="icon ion-ios-folder"></i>
 									Collections</a></li>
-							<li><a href=""><i class="icon ion-power"></i> Sign Out</a></li>
+							<li><a href="/logout"><i class="icon ion-power"></i> Sign Out</a></li>
 						</ul>
 					</div>
 					<!-- dropdown-menu -->
@@ -221,6 +396,221 @@
 		<div class="tab-content">
 			<div class="tab-pane pos-absolute a-0 mg-t-60 overflow-y-auto active"
 				id="contacts" role="tabpanel">
+				<label class="sidebar-label pd-x-25 mg-t-25">Online Contacts</label>
+				<div class="contact-list pd-x-10">
+					<a href="" class="contact-list-link new">
+						<div class="d-flex">
+							<div class="pos-relative">
+								<img src="http://via.placeholder.com/280x280"
+									class="wd-40 rounded-circle" alt="">
+								<div class="contact-status-indicator bg-success bd-br-primary"></div>
+							</div>
+							<div class="contact-person">
+								<p class="mg-b-0">Marilyn Tarter</p>
+								<span class="tx-12 op-5 d-inline-block">Clemson, CA</span>
+							</div>
+							<span class="tx-info tx-12"><span
+								class="square-8 bg-info rounded-circle"></span> 1 new</span>
+						</div> <!-- d-flex -->
+					</a>
+					<!-- contact-list-link -->
+					<a href="" class="contact-list-link">
+						<div class="d-flex">
+							<div class="pos-relative">
+								<img src="http://via.placeholder.com/280x280"
+									class="wd-40 rounded-circle" alt="">
+								<div class="contact-status-indicator bg-success bd-br-primary"></div>
+							</div>
+							<div class="mg-l-10">
+								<p class="mg-b-0 ">Belinda Connor</p>
+								<span class="tx-12 op-5 d-inline-block">Fort Kent, ME</span>
+							</div>
+						</div> <!-- d-flex -->
+					</a>
+					<!-- contact-list-link -->
+					<a href="" class="contact-list-link new">
+						<div class="d-flex">
+							<div class="pos-relative">
+								<img src="http://via.placeholder.com/280x280"
+									class="wd-40 rounded-circle" alt="">
+								<div class="contact-status-indicator bg-success bd-br-primary"></div>
+							</div>
+							<div class="contact-person">
+								<p class="mg-b-0">Britanny Cevallos</p>
+								<span class="tx-12 op-5 d-inline-block">Shiboygan Falls,
+									WI</span>
+							</div>
+							<span class="tx-info tx-12"><span
+								class="square-8 bg-info rounded-circle"></span> 3 new</span>
+						</div> <!-- d-flex -->
+					</a>
+					<!-- contact-list-link -->
+					<a href="" class="contact-list-link new">
+						<div class="d-flex">
+							<div class="pos-relative">
+								<img src="http://via.placeholder.com/280x280"
+									class="wd-40 rounded-circle" alt="">
+								<div class="contact-status-indicator bg-success bd-br-primary"></div>
+							</div>
+							<div class="contact-person">
+								<p class="mg-b-0">Brandon Lawrence</p>
+								<span class="tx-12 op-5 d-inline-block">Snohomish, WA</span>
+							</div>
+							<span class="tx-info tx-12"><span
+								class="square-8 bg-info rounded-circle"></span> 1 new</span>
+						</div> <!-- d-flex -->
+					</a>
+					<!-- contact-list-link -->
+					<a href="" class="contact-list-link">
+						<div class="d-flex">
+							<div class="pos-relative">
+								<img src="http://via.placeholder.com/280x280"
+									class="wd-40 rounded-circle" alt="">
+								<div class="contact-status-indicator bg-success bd-br-primary"></div>
+							</div>
+							<div class="contact-person">
+								<p class="mg-b-0">Andrew Wiggins</p>
+								<span class="tx-12 op-5 d-inline-block">Springfield, MA</span>
+							</div>
+						</div> <!-- d-flex -->
+					</a>
+					<!-- contact-list-link -->
+					<a href="" class="contact-list-link">
+						<div class="d-flex">
+							<div class="pos-relative">
+								<img src="http://via.placeholder.com/280x280"
+									class="wd-40 rounded-circle" alt="">
+								<div class="contact-status-indicator bg-success bd-br-primary"></div>
+							</div>
+							<div class="contact-person">
+								<p class="mg-b-0">Theodore Gristen</p>
+								<span class="tx-12 op-5 d-inline-block">Nashville, TN</span>
+							</div>
+						</div> <!-- d-flex -->
+					</a>
+					<!-- contact-list-link -->
+					<a href="" class="contact-list-link">
+						<div class="d-flex">
+							<div class="pos-relative">
+								<img src="http://via.placeholder.com/280x280"
+									class="wd-40 rounded-circle" alt="">
+								<div class="contact-status-indicator bg-success bd-br-primary"></div>
+							</div>
+							<div class="contact-person">
+								<p class="mg-b-0">Deborah Miner</p>
+								<span class="tx-12 op-5 d-inline-block">North Shore, CA</span>
+							</div>
+						</div> <!-- d-flex -->
+					</a>
+					<!-- contact-list-link -->
+				</div>
+				<!-- contact-list -->
+
+
+				<label class="sidebar-label pd-x-25 mg-t-25">Offline
+					Contacts</label>
+				<div class="contact-list pd-x-10">
+					<a href="" class="contact-list-link">
+						<div class="d-flex">
+							<div class="pos-relative">
+								<img src="http://via.placeholder.com/280x280"
+									class="wd-40 rounded-circle" alt="">
+								<div class="contact-status-indicator bg-gray-500 bd-br-primary"></div>
+							</div>
+							<div class="contact-person">
+								<p class="mg-b-0">Marilyn Tarter</p>
+								<span class="tx-12 op-5 d-inline-block">Clemson, CA</span>
+							</div>
+						</div> <!-- d-flex -->
+					</a>
+					<!-- contact-list-link -->
+					<a href="" class="contact-list-link">
+						<div class="d-flex">
+							<div class="pos-relative">
+								<img src="http://via.placeholder.com/280x280"
+									class="wd-40 rounded-circle" alt="">
+								<div class="contact-status-indicator bg-gray-500 bd-br-primary"></div>
+							</div>
+							<div class="mg-l-10">
+								<p class="mg-b-0">Belinda Connor</p>
+								<span class="tx-12 op-5 d-inline-block">Fort Kent, ME</span>
+							</div>
+						</div> <!-- d-flex -->
+					</a>
+					<!-- contact-list-link -->
+					<a href="" class="contact-list-link">
+						<div class="d-flex">
+							<div class="pos-relative">
+								<img src="http://via.placeholder.com/280x280"
+									class="wd-40 rounded-circle" alt="">
+								<div class="contact-status-indicator bg-gray-500 bd-br-primary"></div>
+							</div>
+							<div class="contact-person">
+								<p class="mg-b-0">Britanny Cevallos</p>
+								<span class="tx-12 op-5 d-inline-block">Shiboygan Falls,
+									WI</span>
+							</div>
+						</div> <!-- d-flex -->
+					</a>
+					<!-- contact-list-link -->
+					<a href="" class="contact-list-link">
+						<div class="d-flex">
+							<div class="pos-relative">
+								<img src="http://via.placeholder.com/280x280"
+									class="wd-40 rounded-circle" alt="">
+								<div class="contact-status-indicator bg-gray-500 bd-br-primary"></div>
+							</div>
+							<div class="contact-person">
+								<p class="mg-b-0">Brandon Lawrence</p>
+								<span class="tx-12 op-5 d-inline-block">Snohomish, WA</span>
+							</div>
+						</div> <!-- d-flex -->
+					</a>
+					<!-- contact-list-link -->
+					<a href="" class="contact-list-link">
+						<div class="d-flex">
+							<div class="pos-relative">
+								<img src="http://via.placeholder.com/280x280"
+									class="wd-40 rounded-circle" alt="">
+								<div class="contact-status-indicator bg-gray-500 bd-br-primary"></div>
+							</div>
+							<div class="contact-person">
+								<p class="mg-b-0">Andrew Wiggins</p>
+								<span class="tx-12 op-5 d-inline-block">Springfield, MA</span>
+							</div>
+						</div> <!-- d-flex -->
+					</a>
+					<!-- contact-list-link -->
+					<a href="" class="contact-list-link">
+						<div class="d-flex">
+							<div class="pos-relative">
+								<img src="http://via.placeholder.com/280x280"
+									class="wd-40 rounded-circle" alt="">
+								<div class="contact-status-indicator bg-gray-500 bd-br-primary"></div>
+							</div>
+							<div class="contact-person">
+								<p class="mg-b-0">Theodore Gristen</p>
+								<span class="tx-12 op-5 d-inline-block">Nashville, TN</span>
+							</div>
+						</div> <!-- d-flex -->
+					</a>
+					<!-- contact-list-link -->
+					<a href="" class="contact-list-link">
+						<div class="d-flex">
+							<div class="pos-relative">
+								<img src="http://via.placeholder.com/280x280"
+									class="wd-40 rounded-circle" alt="">
+								<div class="contact-status-indicator bg-gray-500 bd-br-primary"></div>
+							</div>
+							<div class="contact-person">
+								<p class="mg-b-0">Deborah Miner</p>
+								<span class="tx-12 op-5 d-inline-block">North Shore, CA</span>
+							</div>
+						</div> <!-- d-flex -->
+					</a>
+					<!-- contact-list-link -->
+				</div>
+				<!-- contact-list -->
 
 			</div>
 			<!-- #contacts -->
@@ -485,60 +875,52 @@
 	<div class="br-mainpanel">
 		<div class="br-pageheader pd-y-15 pd-l-20">
 			<nav class="breadcrumb pd-0 mg-0 tx-12">
-				<a class="breadcrumb-item" href="index.html">Bracket</a> <a
-					class="breadcrumb-item" href="#">Forms</a> <span
-					class="breadcrumb-item active">Text Editor</span>
+				<a class="breadcrumb-item" href="index.html">Admin</a> <a
+					class="breadcrumb-item" href="#">News management</a> <span
+					class="breadcrumb-item active">Accounts list</span>
 			</nav>
 		</div>
 		<!-- br-pageheader -->
-		<div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30">
-			<h4 class="tx-gray-800 mg-b-5">Create News</h4>
-		</div>
-
 		<div class="br-pagebody">
 			<div class="br-section-wrapper">
-				<form action="/save-news" data-parsley-validate>
-					<input type="hidden" name="id" value="${news.id}" />
-					<div class="wd-300">
-						<div class="d-md-flex mg-b-30">
-							<div class="form-group mg-b-0">
-								<h6
-									class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-t-80 mg-b-10">
-									Title: <span class="tx-danger">*</span>
-								</h6>
-								<input type="text" name="title" class="form-control wd-500"
-									placeholder="Enter title" required />
-							</div>
-							<!-- form-group -->
-							<!-- form-group -->
-						</div>
-						<!-- d-flex -->
+				<h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-b-10">List
+					of accounts in the system</h6>
+				<p class="mg-b-25 mg-lg-b-50">You can view, edit and delete this
+					accounts.</p>
 
-					</div>
-
-					<h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-t-80 mg-b-10">Content</h6>
-
-					<div id="summernote">Hello, universe!</div>
-					<table>
-						<tr>
-							<td>Select photo:</td>
-							<td><input type="file" name="image" /></td>
-						</tr>
+				<div class="table-wrapper">
+					<table id="datatable1" class="table display responsive nowrap">
+						<thead>
+							<tr>
+								<th class="wd-15p" style="width: 30%;">No</th>
+								<th class="wd-15p" style="width: 60%;">Username</th>
+								<th></th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach var="accounts" items="${lst_accounts}">
+								<tr>
+									<td>${accounts.id }</td>
+									<td>${accounts.username}</td>
+									
+									<td align="center"><a href="update-accounts?id=${accounts.id}"><i
+											class="icon ion-edit"></i></a></td>
+									<td align="center"><a href="delete-accounts?id=${accounts.id}"><i
+											class="icon ion-android-delete"></i></a></td>
+								</tr>
+							</c:forEach>
+						</tbody>
 					</table>
-					<button type="submit"
-						class="btn btn-info tx-11 pd-y-12 tx-uppercase tx-spacing-2">Post
-						news</button>
+				</div>
+				<!-- table-wrapper -->
 
-				</form>
-
-			</div>
 			<!-- br-section-wrapper -->
 		</div>
 		<!-- br-pagebody -->
-
 		<footer class="br-footer">
 			<div class="footer-left">
-				<div class="mg-b-2">Copyright &copy; 2017. Bracket. All Rights
+				<div class="mg-b-2">Copyright &copy; 2017. Group_19. All Rights
 					Reserved.</div>
 				<div>Attentively and carefully made by ThemePixels.</div>
 			</div>
@@ -561,27 +943,41 @@
 	<script
 		src="../../static/lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
 	<script src="../../static/lib/moment/moment.js"></script>
-	<script src="../../static/lib/summernote/summernote-bs4.min.js"></script>
 	<script src="../../static/lib/jquery-ui/jquery-ui.js"></script>
 	<script
 		src="../../static/lib/jquery-switchbutton/jquery.switchButton.js"></script>
 	<script src="../../static/lib/peity/jquery.peity.js"></script>
 	<script src="../../static/lib/highlightjs/highlight.pack.js"></script>
-	<script src="../../static/lib/medium-editor/medium-editor.js"></script>
+	<script src="../../static/lib/datatables/jquery.dataTables.js"></script>
+	<script
+		src="../../static/lib/datatables-responsive/dataTables.responsive.js"></script>
+	<script src="../../static/lib/select2/js/select2.min.js"></script>
 
 	<script src="../../static/js/bracket.js"></script>
 	<script>
 		$(function() {
 			'use strict';
 
-			// Inline editor
-			var editor = new MediumEditor('.editable');
+			$('#datatable1').DataTable({
+				responsive : true,
+				language : {
+					searchPlaceholder : 'Search...',
+					sSearch : '',
+					lengthMenu : '_MENU_ items/page',
+				}
+			});
 
-			// Summernote editor
-			$('#summernote').summernote({
-				height : 300,
-				tooltip : false
-			})
+			$('#datatable2').DataTable({
+				bLengthChange : false,
+				searching : false,
+				responsive : true
+			});
+
+			// Select2
+			$('.dataTables_length select').select2({
+				minimumResultsForSearch : Infinity
+			});
+
 		});
 	</script>
 </body>
