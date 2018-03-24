@@ -58,9 +58,29 @@
 
 <!-- Bracket CSS -->
 <link rel="stylesheet" href="../../static/css/bracket.css">
+	<script type="text/javascript">
+            function getConfirmation(){
+            	var comfirmBox;
+        		comfirmBox = confirm("Do you confirm to delete?");
+        		if (comfirmBox == true) {
+        			return true;
+        		} else {
+        			return false;
+        		}
+            }
+     </script>
 </head>
 
 <body>
+	<%-- thông báo --%>
+	<c:if test="${message ne ''}">
+		<script type="text/javascript">
+	 	var message = '${message}';
+	 	if(message != ""){
+			alert(message);
+	 	}
+	</script>
+	</c:if>
 
 	<!-- ########## START: LEFT PANEL ########## -->
 	<div class="br-logo">
@@ -407,14 +427,15 @@
 									<td>${news.username}</td>
 									
 									<td align="center"><a href="update-news?id=${news.id}"><i
-											class="icon ion-edit"></i></a></td>
-									<td align="center"><a href="delete-news?id=${news.id}"><i
-											class="icon ion-android-delete"></i></a></td>
+											class="icon ion-edit" style="font-size: 18px;"></i></a></td>
+									<td align="center"><a href="delete-news?id=${news.id}" onclick="return getConfirmation();"><i
+											class="icon ion-android-delete" style="font-size: 18px;"></i></a></td>
 								</tr>
 							</c:forEach>
 						</tbody>
 					</table>
 				</div>
+				
 				<!-- table-wrapper -->
 
 			<!-- br-section-wrapper -->

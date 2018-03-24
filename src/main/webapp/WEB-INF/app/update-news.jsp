@@ -430,51 +430,29 @@
 			<div class="br-section-wrapper">
 				<!-- 				<form method="POST" action="form-validation.html save-news" data-parsley-validate> -->
 				<form method="POST" action="save-news" data-parsley-validate>
-					<div class="wd-300">
-						<div class="d-md-flex mg-b-30">
-							<div class="form-group mg-b-0">
-								<input type="hidden" name="id" class="form-control wd-500"
-									placeholder="${news.id }"/>
-							</div>
-							<div class="form-group mg-b-0">
-								<h6
-									class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-t-80 mg-b-10">
-									Title: <span class="tx-danger">*</span>
-								</h6>
-								<input type="text" name="title" class="form-control wd-500"
-									placeholder="${news.title }"/>
-							</div>
-							<!-- form-group -->
-							<!-- form-group -->
-						</div>
-						<!-- d-flex -->
-						<div class="d-md-flex mg-b-30">
-							<div class="form-group mg-b-0">
-								<h6
-									class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-t-80 mg-b-10">
-									Date Created: <span class="tx-danger">*</span>
-								</h6>
-								<input type="text" name="Date Created"
-									class="form-control wd-500" placeholder="${news.date_created }" />
-							</div>
-							<!-- form-group -->
-							<!-- form-group -->
-						</div>
-						<!-- d-flex -->
-
+					<div class="col-sm-12 col-xs-12">
+						<input type="hidden" name="id" value="${news.id}" />
+					</div>
+					<div class="col-sm-12 col-xs-12">
+						<input type="hidden" name="date_created" value="${news.date_created}" />
+					</div>
+					<div class="col-sm-12 col-xs-12">
+						<input type="hidden" name="username" value="${news.username}" />
+					</div>
+					<div class="col-sm-12 col-xs-12">
+						<input type="hidden" name="account_id" value="${news.account_id}" />
+					</div>
+					<div class="form-group mg-b-0">
+						<h6
+							class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-t-80 mg-b-10">
+							Title: <span class="tx-danger">*</span>
+						</h6>
+						<textarea id="summernote1" name="title" style="display: none;">${news.title}</textarea>
 					</div>
 
 					<h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-t-80 mg-b-10">Content</h6>
-
-					<div id="summernote">${news.content}</div>
-					<div class="d-md-flex mg-b-30">
-						<div class="form-group mg-b-0">
-							<input type="hidden" name="username" class="form-control wd-500"
-								placeholder="${news.username }" />
-						</div>
-						<!-- form-group -->
-						<!-- form-group -->
-					</div>
+					<textarea id="summernote2" name="content" style="display: none;">${news.content}</textarea>
+					
 					<button type="submit"
 						class="btn btn-info tx-11 pd-y-12 tx-uppercase tx-spacing-2">Save</button>
 
@@ -527,10 +505,21 @@
 			var editor = new MediumEditor('.editable');
 
 			// Summernote editor
-			$('#summernote').summernote({
+			$('#summernote1').summernote({
+				height : 100,
+				tooltip : false
+			});
+			$('#summernote2').summernote({
 				height : 450,
 				tooltip : false
-			})
+			});
+			$('#myForm').submit(
+					function() {
+						$('textarea[name=content]').val(
+								$('#summernote2').summernote('code'));
+						$('textarea[name=title]').val(
+								$('#summernote1').summernote('code'));
+					});
 		});
 	</script>
 </body>

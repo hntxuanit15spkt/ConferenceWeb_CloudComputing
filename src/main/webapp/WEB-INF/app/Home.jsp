@@ -198,8 +198,7 @@
 						<div style="padding-top: 10px;">
 							<c:forEach var="news" items="${lst_news}">
 								<p style="color: #b5150d;">Date created 
-									<fmt:formatDate pattern="yyyy/MM/dd"
-										value="${news.date_created}" />
+										${news.date_created}
 								</p>
 								<a href="news?id=${news.id}">${news.title}</a>
 								<hr />

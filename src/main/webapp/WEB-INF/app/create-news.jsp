@@ -497,27 +497,16 @@
 			<div class="br-section-wrapper">
 				<form method="POST" action="save-news" data-parsley-validate
 					id="myForm">
-					<input type="hidden" name="id" value="${news.id}" />
-					<div class="wd-300">
-						<div class="d-md-flex mg-b-30">
-							<div class="form-group mg-b-0">
-								<h6
-									class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-t-80 mg-b-10">
-									Title: <span class="tx-danger">*</span>
-								</h6>
-								<input type="text" name="title" class="form-control wd-500"
-									placeholder="Enter title" required />
-							</div>
-							<!-- form-group -->
-							<!-- form-group -->
-						</div>
-						<!-- d-flex -->
-
+					<div class="form-group mg-b-0">
+						<h6
+							class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-t-80 mg-b-10">
+							Title: <span class="tx-danger">*</span>
+						</h6>
+						<textarea id="summernote1" name="title" style="display: none;"></textarea>
 					</div>
-
-					<h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-t-80 mg-b-10">Content</h6>
-					<div id="summernote">Hello, universe!</div>
-					<textarea name="content" style="display: none;"></textarea>
+					<h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-t-80 mg-b-10">Content: <span class="tx-danger">*</span></h6>
+					
+					<textarea id="summernote2" name="content" style="display: none;"></textarea>
 					<table>
 						<tr>
 							<td>Select photo:</td>
@@ -577,15 +566,21 @@
 			var editor = new MediumEditor('.editable');
 
 			// Summernote editor
-			$('#summernote').summernote({
+			$('#summernote2').summernote({
 				height : 300,
+				tooltip : false
+			});
+			$('#summernote1').summernote({
+				height : 100,
 				tooltip : false
 			});
 
 			$('#myForm').submit(
 					function() {
 						$('textarea[name=content]').val(
-								$('#summernote').summernote('code'));
+								$('#summernote2').summernote('code'));
+						$('textarea[name=title]').val(
+								$('#summernote1').summernote('code'));
 					});
 		});
 	</script>
