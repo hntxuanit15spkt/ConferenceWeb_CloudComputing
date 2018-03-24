@@ -496,7 +496,7 @@
 		<div class="br-pagebody">
 			<div class="br-section-wrapper">
 				<form method="POST" action="save-news" data-parsley-validate
-					id="myForm">
+					id="myForm" enctype="multipart/form-data">
 					<input type="hidden" name="id" value="${news.id}" />
 					<div class="wd-300">
 						<div class="d-md-flex mg-b-30">
@@ -516,12 +516,12 @@
 					</div>
 
 					<h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-t-80 mg-b-10">Content</h6>
-					<div id="summernote">Hello, universe!</div>
-					<textarea name="content" style="display: none;"></textarea>
+					<!-- <div id="summernote">Hello, universe!</div> -->
+					<textarea id="summernote" name="content" style="display: none;"></textarea>
 					<table>
 						<tr>
 							<td>Select photo:</td>
-							<td><input type="file" name="image" /></td>
+							<td><input type="file" name="file" /></td>
 						</tr>
 					</table>
 					<button type="submit"
@@ -580,13 +580,36 @@
 			$('#summernote').summernote({
 				height : 300,
 				tooltip : false
+				/* onImageUpload : function(files, editor, $editable) {
+					sendFile(files[0], editor, $editable);
+				} */
+
 			});
 
-			$('#myForm').submit(
+			function sendFile(file, editor, welEditable) {
+				var data = new FormData();
+				data.append("file", file);
+				$.ajax({
+					url : 'save-news',
+					data : data,
+					cache : false,
+					contentType : false,
+					processData : false,
+					type : "post",
+					success : function(data) {
+						editor.insertImage(welEditable, data.image);
+					},
+					error : function(jqXHR, textStatus, errorThrown) {
+						console.log(textStatus + " " + errorThrown);
+					}
+				});
+			}
+
+			/* $('#myForm').submit(
 					function() {
 						$('textarea[name=content]').val(
 								$('#summernote').summernote('code'));
-					});
+					}); */
 		});
 	</script>
 </body>

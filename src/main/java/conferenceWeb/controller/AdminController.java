@@ -16,22 +16,21 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
+import conferenceWeb.hello.storage.StorageService;
 import conferenceWeb.model.Account;
 import conferenceWeb.model.News;
 import conferenceWeb.service.AccountService;
 import conferenceWeb.service.NewsService;
 
-@Controller // Gọi là một specialized form của @Component annotation. Đánh dấu class này
-// như là một bean và cơ chế component-scanning sẽ thêm nó
-// vào application - context. Có trong application-contex thì class này mới thực
-// thi được
+@Controller
 public class AdminController {
-
+    /* private final StorageService storageService = null; */
     @Autowired
     private NewsService newsService;
     private AccountService accountService;
-    
+
     // Xem danh sách
     @GetMapping("/all-news")
     public String AllNews(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -47,27 +46,30 @@ public class AdminController {
     //
     @GetMapping("/create-news")
     public String CreateNews(HttpServletRequest request, HttpServletResponse response) throws IOException {
-	HttpSession session = request.getSession();
-	String username = (String) session.getAttribute("username");
-	if (username == null) {
-	    response.sendRedirect("/login");
-	}
-	request.setAttribute("message", null);
+	/*
+	 * HttpSession session = request.getSession(); String username = (String)
+	 * session.getAttribute("username"); if (username == null) {
+	 * response.sendRedirect("/login"); } request.setAttribute("message", null);
+	 */
 	return "create-news";
     }
-    
+
     //
     @RequestMapping(value = "/save-news", method = RequestMethod.POST)
-    public String SaveNews(@ModelAttribute News news, BindingResult bindingResult, HttpServletRequest request) {
+    public String SaveNews(@RequestParam("file") MultipartFile file, @ModelAttribute News news,
+	    BindingResult bindingResult, HttpServletRequest request) throws Exception {
+	FileUploadController fileUploadController = new FileUploadController();
+	news.setContent(news.getContent() + "<br/>" + fileUploadController.handleFileUpload(file));
 	news.setDate_created(new Date());
 	Account acc = accountService.GetAccountSession(request);
 	news.setUsername(acc.getUsername());
 	news.setAccount_id(acc.getId());
-	/*System.out.println("id: " + news.getId());
-	System.out.println("title: " + news.getTitle());
-	System.out.println("content: " + news.getContent());
-	System.out.println("date: " + news.getDate_created());
-	System.out.println("username: " + news.getUsername());*/
+	/*
+	 * System.out.println("id: " + news.getId()); System.out.println("title: " +
+	 * news.getTitle()); System.out.println("content: " + news.getContent());
+	 * System.out.println("date: " + news.getDate_created());
+	 * System.out.println("username: " + news.getUsername());
+	 */
 	try {
 	    newsService.save(news);
 	    request.setAttribute("message", "Successfull");

@@ -3,6 +3,8 @@ package conferenceWeb.service;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
+
 import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 import conferenceWeb.dao.NewsRepository;
@@ -27,8 +29,8 @@ public class NewsService {
 	return lstNews;
     }
 
-    public News findNews(int id) {
-	return newsRepository.findOne(id);
+    public Optional<News> findNews(int id) {
+	return newsRepository.findById(id);
     }
 
     public void save(News news) {
@@ -36,6 +38,6 @@ public class NewsService {
     }
 
     public void delete(int id) {
-	newsRepository.delete(id);
+	newsRepository.deleteById(id);
     }
 }
