@@ -25,7 +25,7 @@ public class NewsService {
 	for (News news : newsRepository.findAll()) {
 	    lstNews.add(news);
 	}
-	//Collections.reverse(lstNews);
+	Collections.reverse(lstNews);
 	return lstNews;
     }
 

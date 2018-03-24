@@ -58,9 +58,29 @@
 
 <!-- Bracket CSS -->
 <link rel="stylesheet" href="../../static/css/bracket.css">
+	<script type="text/javascript">
+            function getConfirmation(){
+            	var comfirmBox;
+        		comfirmBox = confirm("Do you confirm to delete?");
+        		if (comfirmBox == true) {
+        			return true;
+        		} else {
+        			return false;
+        		}
+            }
+     </script>
 </head>
 
 <body>
+	<%-- thông báo --%>
+	<c:if test="${message ne ''}">
+		<script type="text/javascript">
+	 	var message = '${message}';
+	 	if(message != ""){
+			alert(message);
+	 	}
+	</script>
+	</c:if>
 
 	<!-- ########## START: LEFT PANEL ########## -->
 	<div class="br-logo">
@@ -384,15 +404,15 @@
 				<p class="mg-b-25 mg-lg-b-50">You can view, edit and delete this
 					news.</p>
 
-				<div class="table-wrapper">
-					<table id="datatable1" class="table display responsive nowrap">
+				<div class="table-wrapper table-responsive table-full-width">
+					<table id="datatable1" class="table table-striped display responsive">
 						<thead>
 							<tr>
 								<th class="wd-15p" style="width: 10%;">No</th>
-								<th class="wd-15p" style="width: 30%;">Title</th>
+								<th class="wd-15p" style="width: 50%;">Title</th>
 <!-- 								<th class="wd-15p" style="width: 30%;">Content</th> -->
-								<th class="wd-15p" style="width: 20%;">Created Time</th>
-								<th class="wd-15p" style="width: 20%;">Username</th>
+								<th class="wd-15p" style="width: 15%;">Created Time</th>
+								<th class="wd-15p" style="width: 15%;">Username</th>
 								<th></th>
 								<th></th>
 							</tr>
@@ -407,14 +427,15 @@
 									<td>${news.username}</td>
 									
 									<td align="center"><a href="update-news?id=${news.id}"><i
-											class="icon ion-edit"></i></a></td>
-									<td align="center"><a href="delete-news?id=${news.id}"><i
-											class="icon ion-android-delete"></i></a></td>
+											class="icon ion-edit" style="font-size: 18px;"></i></a></td>
+									<td align="center"><a href="delete-news?id=${news.id}" onclick="return getConfirmation();"><i
+											class="icon ion-android-delete" style="font-size: 18px;"></i></a></td>
 								</tr>
 							</c:forEach>
 						</tbody>
 					</table>
 				</div>
+				
 				<!-- table-wrapper -->
 
 			<!-- br-section-wrapper -->

@@ -28,8 +28,7 @@ public class News implements Serializable {
 	private String content;
 
 	@Column(name = "date_created")
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date date_created;
+	private String date_created;
 
 	@Column(name = "username")
 	private String username;
@@ -39,7 +38,7 @@ public class News implements Serializable {
 
 	public News() {}
 
-	public News(int id, String title, String content, Date date_created, String username) {
+	public News(int id, String title, String content, String date_created, String username) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -72,11 +71,11 @@ public class News implements Serializable {
 		this.content = content;
 	}
 
-	public Date getDate_created() {
+	public String getDate_created() {
 		return date_created;
 	}
 
-	public void setDate_created(Date date_created) {
+	public void setDate_created(String date_created) {
 		this.date_created = date_created;
 	}
 

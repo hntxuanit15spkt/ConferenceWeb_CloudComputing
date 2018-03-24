@@ -496,6 +496,7 @@
 		<div class="br-pagebody">
 			<div class="br-section-wrapper">
 				<form method="POST" action="save-news" data-parsley-validate
+<<<<<<< HEAD
 					id="myForm" enctype="multipart/form-data">
 					<input type="hidden" name="id" value="${news.id}" />
 					<div class="wd-300">
@@ -513,11 +514,26 @@
 						</div>
 						<!-- d-flex -->
 
+=======
+					id="myForm">
+					<div class="form-group mg-b-0">
+						<h6
+							class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-t-80 mg-b-10">
+							Title: <span class="tx-danger">*</span>
+						</h6>
+						<textarea id="summernote1" name="title" style="display: none;"></textarea>
+>>>>>>> refs/remotes/origin/master
 					</div>
+<<<<<<< HEAD
 
 					<h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-t-80 mg-b-10">Content</h6>
 					<!-- <div id="summernote">Hello, universe!</div> -->
 					<textarea id="summernote" name="content" style="display: none;"></textarea>
+=======
+					<h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-t-80 mg-b-10">Content: <span class="tx-danger">*</span></h6>
+					
+					<textarea id="summernote2" name="content" style="display: none;"></textarea>
+>>>>>>> refs/remotes/origin/master
 					<table>
 						<tr>
 							<td>Select photo:</td>
@@ -577,13 +593,17 @@
 			var editor = new MediumEditor('.editable');
 
 			// Summernote editor
-			$('#summernote').summernote({
+			$('#summernote2').summernote({
 				height : 300,
 				tooltip : false
 				/* onImageUpload : function(files, editor, $editable) {
 					sendFile(files[0], editor, $editable);
 				} */
 
+			});
+			$('#summernote1').summernote({
+				height : 100,
+				tooltip : false
 			});
 
 			function sendFile(file, editor, welEditable) {
@@ -608,8 +628,15 @@
 			/* $('#myForm').submit(
 					function() {
 						$('textarea[name=content]').val(
+<<<<<<< HEAD
 								$('#summernote').summernote('code'));
 					}); */
+=======
+								$('#summernote2').summernote('code'));
+						$('textarea[name=title]').val(
+								$('#summernote1').summernote('code'));
+					});
+>>>>>>> refs/remotes/origin/master
 		});
 	</script>
 </body>
