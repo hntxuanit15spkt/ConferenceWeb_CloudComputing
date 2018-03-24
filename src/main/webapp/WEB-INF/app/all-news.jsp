@@ -384,15 +384,15 @@
 				<p class="mg-b-25 mg-lg-b-50">You can view, edit and delete this
 					news.</p>
 
-				<div class="table-wrapper">
-					<table id="datatable1" class="table display responsive nowrap">
+				<div class="table-wrapper table-responsive table-full-width">
+					<table id="datatable1" class="table table-striped display responsive">
 						<thead>
 							<tr>
 								<th class="wd-15p" style="width: 10%;">No</th>
-								<th class="wd-15p" style="width: 30%;">Title</th>
+								<th class="wd-15p" style="width: 50%;">Title</th>
 <!-- 								<th class="wd-15p" style="width: 30%;">Content</th> -->
-								<th class="wd-15p" style="width: 20%;">Created Time</th>
-								<th class="wd-15p" style="width: 20%;">Username</th>
+								<th class="wd-15p" style="width: 15%;">Created Time</th>
+								<th class="wd-15p" style="width: 15%;">Username</th>
 								<th></th>
 								<th></th>
 							</tr>
