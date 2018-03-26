@@ -1,8 +1,10 @@
 package conferenceWeb.hello.storage;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Repository;
 
 @ConfigurationProperties("storage")
+@Repository
 public class StorageProperties {
 
     /**

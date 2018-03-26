@@ -13,20 +13,19 @@ import conferenceWeb.model.Account;
 @Transactional
 public class AccountService {
 
-    private static AccountRepository accountRepository;
+	private static AccountRepository accountRepository;
 
-    public AccountService(AccountRepository accRepository) {
-	this.accountRepository = accRepository;
-    }
+	public AccountService(AccountRepository accRepository) {
+		this.accountRepository = accRepository;
+	}
 
-    public static Account FindAccountByUsername(String username) {
-        return accountRepository.findByUsername(username);
-    }
-    
-    public static Account GetAccountSession(HttpServletRequest request)
-    {
-	HttpSession session = request.getSession();
-	String username = (String) session.getAttribute("username");
-	return FindAccountByUsername(username);
-    }
+	public static Account FindAccountByUsername(String username) {
+		return accountRepository.findByUsername(username);
+	}
+
+	public static Account GetAccountSession(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		String username = (String) session.getAttribute("username");
+		return FindAccountByUsername(username);
+	}
 }

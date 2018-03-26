@@ -11,33 +11,33 @@ import conferenceWeb.dao.NewsRepository;
 import conferenceWeb.model.News;
 
 @Service // This annotation is a specialized form of the@Component annotation intended to
-	 // be used in the service layer.
+// be used in the service layer.
 @Transactional
 public class NewsService {
-    private final NewsRepository newsRepository;
+	private static NewsRepository newsRepository;
 
-    public NewsService(NewsRepository newsRepository) {
-	this.newsRepository = newsRepository;
-    }
-
-    public List<News> findAll() {
-	List<News> lstNews = new ArrayList<>();
-	for (News news : newsRepository.findAll()) {
-	    lstNews.add(news);
+	public NewsService(NewsRepository newsRepository) {
+		this.newsRepository = newsRepository;
 	}
-	Collections.reverse(lstNews);
-	return lstNews;
-    }
 
-    public Optional<News> findNews(int id) {
-	return newsRepository.findById(id);
-    }
+	public List<News> findAll() {
+		List<News> lstNews = new ArrayList<>();
+		for (News news : newsRepository.findAll()) {
+			lstNews.add(news);
+		}
+		Collections.reverse(lstNews);
+		return lstNews;
+	}
 
-    public void save(News news) {
-	newsRepository.save(news);
-    }
+	public News findNews(int id) {
+		return newsRepository.findById(id);
+	}
 
-    public void delete(int id) {
-	newsRepository.deleteById(id);
-    }
+	public void save(News news) {
+		newsRepository.save(news);
+	}
+
+	public void delete(int id) {
+		newsRepository.deleteById(id);
+	}
 }

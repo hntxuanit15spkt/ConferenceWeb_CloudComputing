@@ -429,7 +429,7 @@
 		<div class="br-pagebody">
 			<div class="br-section-wrapper">
 				<!-- 				<form method="POST" action="form-validation.html save-news" data-parsley-validate> -->
-				<form method="POST" action="save-news" data-parsley-validate>
+				<form method="POST" action="save-news" enctype="multipart/form-data" data-parsley-validate id="myForm">
 					<div class="col-sm-12 col-xs-12">
 						<input type="hidden" name="id" value="${news.id}" />
 					</div>
@@ -452,7 +452,12 @@
 
 					<h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-t-80 mg-b-10">Content</h6>
 					<textarea id="summernote2" name="content" style="display: none;">${news.content}</textarea>
-					
+					<table>
+						<tr>
+							<td>Select photo:</td>
+							<td><input type="file" name="image" /></td>
+						</tr>
+					</table>
 					<button type="submit"
 						class="btn btn-info tx-11 pd-y-12 tx-uppercase tx-spacing-2">Save</button>
 

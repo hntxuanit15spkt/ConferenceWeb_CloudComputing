@@ -1,5 +1,7 @@
 package conferenceWeb.controller;
 
+import conferenceWeb.hello.storage.StorageFileNotFoundException;
+import conferenceWeb.hello.storage.StorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
@@ -26,9 +28,6 @@ import com.google.api.services.drive.Drive;
 import com.google.api.services.drive.DriveScopes;
 import com.google.api.services.drive.model.File;
 
-import conferenceWeb.hello.storage.StorageFileNotFoundException;
-import conferenceWeb.hello.storage.StorageService;
-
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -40,141 +39,130 @@ import java.util.stream.Collectors;
 
 @Controller
 public class FileUploadController {
-    /** Application name. */
-    private static final String APPLICATION_NAME = "Drive API Java Quickstart";
+	/** Application name. */
+	private static final String APPLICATION_NAME = "Drive API Java Quickstart";
 
-    /** Directory to store user credentials for this application. */
-    private static final java.io.File DATA_STORE_DIR = new java.io.File(System.getProperty("user.home"),
-	    ".credentials/drive-java-quickstart");
+	/** Directory to store user credentials for this application. */
+	private static final java.io.File DATA_STORE_DIR = new java.io.File(System.getProperty("user.home"),
+			".credentials/drive-java-quickstart");
 
-    /** Global instance of the {@link FileDataStoreFactory}. */
-    private static FileDataStoreFactory DATA_STORE_FACTORY;
+	/** Global instance of the {@link FileDataStoreFactory}. */
+	private static FileDataStoreFactory DATA_STORE_FACTORY;
 
-    /** Global instance of the JSON factory. */
-    private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
+	/** Global instance of the JSON factory. */
+	private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
 
-    /** Global instance of the HTTP transport. */
-    private static HttpTransport HTTP_TRANSPORT;
+	/** Global instance of the HTTP transport. */
+	private static HttpTransport HTTP_TRANSPORT;
 
-    /**
-     * Global instance of the scopes required by this quickstart.
-     *
-     * If modifying these scopes, delete your previously saved credentials at
-     * ~/.credentials/drive-java-quickstart
-     */
-    private static final List<String> SCOPES = Arrays.asList(DriveScopes.DRIVE_METADATA_READONLY);
+	/**
+	 * Global instance of the scopes required by this quickstart.
+	 *
+	 * If modifying these scopes, delete your previously saved credentials at
+	 * ~/.credentials/drive-java-quickstart
+	 */
+	private static final List<String> SCOPES = Arrays.asList(DriveScopes.DRIVE);
 
-    static {
-	try {
-	    HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
-	    DATA_STORE_FACTORY = new FileDataStoreFactory(DATA_STORE_DIR);
-	} catch (Throwable t) {
-	    t.printStackTrace();
-	    System.exit(1);
+	static {
+		try {
+			HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
+			DATA_STORE_FACTORY = new FileDataStoreFactory(DATA_STORE_DIR);
+		} catch (Throwable t) {
+			t.printStackTrace();
+			System.exit(1);
+		}
 	}
-    }
-
-    public FileUploadController() {
 	
-    }
+	// private StorageService storageService;
+	private static StorageService storageService;
 
-    private StorageService storageService;
+	@Autowired
+	public FileUploadController(StorageService storageService) {
+		this.storageService = storageService;
+	}
 
-    @Autowired
-    public FileUploadController(StorageService storageService) {
-	this.storageService = storageService;
-    }
+	/*
+	 * @GetMapping("/") public String listUploadedFiles(Model model) throws
+	 * IOException {
+	 * 
+	 * model.addAttribute("files", storageService.loadAll() .map(path ->
+	 * MvcUriComponentsBuilder .fromMethodName(FileUploadController.class,
+	 * "serveFile", path.getFileName().toString()) .build().toString())
+	 * .collect(Collectors.toList()));
+	 * 
+	 * return "uploadForm"; }
+	 */
 
-    /*@GetMapping("/")
-    public String listUploadedFiles(Model model) throws IOException {
+	@GetMapping("/files/{filename:.+}")
+	@ResponseBody
+	public ResponseEntity<Resource> serveFile(@PathVariable String filename) {
 
-	model.addAttribute("files",
-		storageService.loadAll()
-			.map(path -> MvcUriComponentsBuilder
-				.fromMethodName(FileUploadController.class, "serveFile", path.getFileName().toString())
-				.build().toString())
-			.collect(Collectors.toList()));
+		Resource file = storageService.loadAsResource(filename);
+		return ResponseEntity.ok()
+				.header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + file.getFilename() + "\"")
+				.body(file);
+	}
 
-	return "uploadForm";
-    }*/
+	// @PostMapping("/")
+	public static String handleFileUpload(MultipartFile file) throws Exception {
+		storageService.store(file);
+		// google drive
+		Drive service = getDriveService();
+		File fileMetadata = new File();
+		fileMetadata.setTitle(file.getOriginalFilename());
+		java.io.File filePath = new java.io.File("upload-dir/" + file.getOriginalFilename());
+		FileContent mediaContent = new FileContent(file.getContentType(), filePath);
+		File f = service.files().insert(fileMetadata, mediaContent).setFields("id").execute();
+		return "https://drive.google.com/open?id=" + f.getId();
+	}
 
-    @GetMapping("/files/{filename:.+}")
-    @ResponseBody
-    public ResponseEntity<Resource> serveFile(@PathVariable String filename) {
+	/*
+	 * @PostMapping("/") public String handleFileUpload(@RequestParam("file")
+	 * MultipartFile file, RedirectAttributes redirectAttributes) throws Exception {
+	 * 
+	 * storageService.store(file);
+	 * 
+	 * // google drive Drive service = getDriveService();
+	 * 
+	 * File fileMetadata = new File();
+	 * fileMetadata.setTitle(file.getOriginalFilename()); java.io.File filePath =
+	 * new java.io.File("upload-dir/" + file.getOriginalFilename()); FileContent
+	 * mediaContent = new FileContent(file.getContentType(), filePath); File f =
+	 * service.files().insert(fileMetadata, mediaContent).setFields("id").execute();
+	 * // System.out.println("File ID: " + f.getId()+" | "+f.getWebContentLink());
+	 * redirectAttributes.addFlashAttribute("message", "You successfully uploaded "
+	 * + file.getOriginalFilename());
+	 * redirectAttributes.addFlashAttribute("linktai",
+	 * "https://drive.google.com/open?id=" + f.getId()); return "redirect:/"; }
+	 */
 
-	Resource file = storageService.loadAsResource(filename);
-	return ResponseEntity.ok()
-		.header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + file.getFilename() + "\"")
-		.body(file);
-    }
-    
-    //@PostMapping("/")
-    public String handleFileUpload(MultipartFile file)
-	    throws Exception {
+	public static Credential authorize() throws Exception {
+		// Load client secrets.
+		InputStream in = FileUploadController.class.getResourceAsStream("/client_secret.json");
+		GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(in));
 
-	storageService.store(file);
+		// Build flow and trigger user authorization request.
+		GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(HTTP_TRANSPORT, JSON_FACTORY,
+				clientSecrets, SCOPES).setDataStoreFactory(DATA_STORE_FACTORY).setAccessType("offline").build();
+		Credential credential = new AuthorizationCodeInstalledApp(flow, new LocalServerReceiver()).authorize("user");
+		System.out.println("Credentials saved to " + DATA_STORE_DIR.getAbsolutePath());
+		return credential;
+	}
 
-	// google drive
-	Drive service = getDriveService();
+	/**
+	 * Build and return an authorized Drive client service.
+	 * 
+	 * @return an authorized Drive client service
+	 * @throws Exception
+	 */
+	public static Drive getDriveService() throws Exception {
+		Credential credential = authorize();
+		return new Drive.Builder(HTTP_TRANSPORT, JSON_FACTORY, credential).setApplicationName(APPLICATION_NAME).build();
+	}
 
-	File fileMetadata = new File();
-	fileMetadata.setTitle(file.getOriginalFilename());
-	java.io.File filePath = new java.io.File("upload-dir/" + file.getOriginalFilename());
-	FileContent mediaContent = new FileContent(file.getContentType(), filePath);
-	File f = service.files().insert(fileMetadata, mediaContent).setFields("id").execute();
-	// System.out.println("File ID: " + f.getId()+" | "+f.getWebContentLink());
-	/*redirectAttributes.addFlashAttribute("message", "You successfully uploaded " + file.getOriginalFilename());
-	redirectAttributes.addFlashAttribute("linktai", "https://drive.google.com/open?id=" + f.getId());*/
-	return "https://drive.google.com/open?id=" + f.getId();
-    }
-
-    /*@PostMapping("/")
-    public String handleFileUpload(@RequestParam("file") MultipartFile file, RedirectAttributes redirectAttributes)
-	    throws Exception {
-
-	storageService.store(file);
-
-	// google drive
-	Drive service = getDriveService();
-
-	File fileMetadata = new File();
-	fileMetadata.setTitle(file.getOriginalFilename());
-	java.io.File filePath = new java.io.File("upload-dir/" + file.getOriginalFilename());
-	FileContent mediaContent = new FileContent(file.getContentType(), filePath);
-	File f = service.files().insert(fileMetadata, mediaContent).setFields("id").execute();
-	// System.out.println("File ID: " + f.getId()+" | "+f.getWebContentLink());
-	redirectAttributes.addFlashAttribute("message", "You successfully uploaded " + file.getOriginalFilename());
-	redirectAttributes.addFlashAttribute("linktai", "https://drive.google.com/open?id=" + f.getId());
-	return "redirect:/";
-    }*/
-
-    public static Credential authorize() throws Exception {
-	// Load client secrets.
-	InputStream in = FileUploadController.class.getResourceAsStream("/client_secret.json");
-	GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(in));
-
-	// Build flow and trigger user authorization request.
-	GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(HTTP_TRANSPORT, JSON_FACTORY,
-		clientSecrets, SCOPES).setDataStoreFactory(DATA_STORE_FACTORY).setAccessType("offline").build();
-	Credential credential = new AuthorizationCodeInstalledApp(flow, new LocalServerReceiver()).authorize("user");
-	System.out.println("Credentials saved to " + DATA_STORE_DIR.getAbsolutePath());
-	return credential;
-    }
-
-    /**
-     * Build and return an authorized Drive client service.
-     * 
-     * @return an authorized Drive client service
-     * @throws Exception
-     */
-    public static Drive getDriveService() throws Exception {
-	Credential credential = authorize();
-	return new Drive.Builder(HTTP_TRANSPORT, JSON_FACTORY, credential).setApplicationName(APPLICATION_NAME).build();
-    }
-
-    @ExceptionHandler(StorageFileNotFoundException.class)
-    public ResponseEntity handleStorageFileNotFound(StorageFileNotFoundException exc) {
-	return ResponseEntity.notFound().build();
-    }
+	@ExceptionHandler(StorageFileNotFoundException.class)
+	public ResponseEntity handleStorageFileNotFound(StorageFileNotFoundException exc) {
+		return ResponseEntity.notFound().build();
+	}
 
 }

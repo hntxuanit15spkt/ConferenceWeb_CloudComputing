@@ -496,48 +496,22 @@
 		<div class="br-pagebody">
 			<div class="br-section-wrapper">
 				<form method="POST" action="save-news" data-parsley-validate
-<<<<<<< HEAD
 					id="myForm" enctype="multipart/form-data">
-					<input type="hidden" name="id" value="${news.id}" />
-					<div class="wd-300">
-						<div class="d-md-flex mg-b-30">
-							<div class="form-group mg-b-0">
-								<h6
-									class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-t-80 mg-b-10">
-									Title: <span class="tx-danger">*</span>
-								</h6>
-								<input type="text" name="title" class="form-control wd-500"
-									placeholder="Enter title" required />
-							</div>
-							<!-- form-group -->
-							<!-- form-group -->
-						</div>
-						<!-- d-flex -->
-
-=======
-					id="myForm">
 					<div class="form-group mg-b-0">
-						<h6
-							class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-t-80 mg-b-10">
+						<h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-t-80 mg-b-10">
 							Title: <span class="tx-danger">*</span>
 						</h6>
 						<textarea id="summernote1" name="title" style="display: none;"></textarea>
->>>>>>> refs/remotes/origin/master
 					</div>
-<<<<<<< HEAD
+					<h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-t-80 mg-b-10">
+						Content: <span class="tx-danger">*</span>
+					</h6>
 
-					<h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-t-80 mg-b-10">Content</h6>
-					<!-- <div id="summernote">Hello, universe!</div> -->
-					<textarea id="summernote" name="content" style="display: none;"></textarea>
-=======
-					<h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-t-80 mg-b-10">Content: <span class="tx-danger">*</span></h6>
-					
 					<textarea id="summernote2" name="content" style="display: none;"></textarea>
->>>>>>> refs/remotes/origin/master
 					<table>
 						<tr>
 							<td>Select photo:</td>
-							<td><input type="file" name="file" /></td>
+							<td><input type="file" name="image" /></td>
 						</tr>
 					</table>
 					<button type="submit"
@@ -596,47 +570,19 @@
 			$('#summernote2').summernote({
 				height : 300,
 				tooltip : false
-				/* onImageUpload : function(files, editor, $editable) {
-					sendFile(files[0], editor, $editable);
-				} */
-
 			});
 			$('#summernote1').summernote({
 				height : 100,
 				tooltip : false
 			});
 
-			function sendFile(file, editor, welEditable) {
-				var data = new FormData();
-				data.append("file", file);
-				$.ajax({
-					url : 'save-news',
-					data : data,
-					cache : false,
-					contentType : false,
-					processData : false,
-					type : "post",
-					success : function(data) {
-						editor.insertImage(welEditable, data.image);
-					},
-					error : function(jqXHR, textStatus, errorThrown) {
-						console.log(textStatus + " " + errorThrown);
-					}
-				});
-			}
-
-			/* $('#myForm').submit(
+			$('#myForm').submit(
 					function() {
 						$('textarea[name=content]').val(
-<<<<<<< HEAD
-								$('#summernote').summernote('code'));
-					}); */
-=======
 								$('#summernote2').summernote('code'));
 						$('textarea[name=title]').val(
 								$('#summernote1').summernote('code'));
 					});
->>>>>>> refs/remotes/origin/master
 		});
 	</script>
 </body>

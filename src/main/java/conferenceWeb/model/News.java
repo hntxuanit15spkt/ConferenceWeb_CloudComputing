@@ -37,14 +37,14 @@ public class News implements Serializable {
 	private int account_id;
 
 	public News() {}
-
-	public News(int id, String title, String content, String date_created, String username) {
-		super();
+	
+	public News(int id, String title, String content, String date_created, String username, int account_id) {
 		this.id = id;
 		this.title = title;
 		this.content = content;
 		this.date_created = date_created;
 		this.username = username;
+		this.account_id = account_id;
 	}
 
 	public int getId() {
