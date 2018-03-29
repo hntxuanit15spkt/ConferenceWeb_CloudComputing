@@ -27,12 +27,14 @@ import com.google.api.client.util.store.FileDataStoreFactory;
 import com.google.api.services.drive.Drive;
 import com.google.api.services.drive.DriveScopes;
 import com.google.api.services.drive.model.File;
+import com.google.api.services.drive.model.ParentReference;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -109,7 +111,13 @@ public class FileUploadController {
 		// google drive
 		Drive service = getDriveService();
 		File fileMetadata = new File();
+		String folderId = "1SjKMH3NButMQ1v7Dav0fQq97_TD7grI4";
 		fileMetadata.setTitle(file.getOriginalFilename());
+		ParentReference pf = new ParentReference();
+		pf.setId(folderId);
+		List<ParentReference> listPf = new ArrayList<ParentReference>();
+		listPf.add(pf);
+		fileMetadata.setParents(listPf);
 		java.io.File filePath = new java.io.File("upload-dir/" + file.getOriginalFilename());
 		FileContent mediaContent = new FileContent(file.getContentType(), filePath);
 		File f = service.files().insert(fileMetadata, mediaContent).setFields("id").execute();
