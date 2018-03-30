@@ -54,8 +54,11 @@ public class AdminController {
 		String announce = null;
 		String linkImage = null;
 		if (news.getId() == 0) {
-			linkImage = FileUploadController.handleFileUpload(file);
-			news.setContent(news.getContent() + "<br/>" + linkImage);
+			if(!file.getOriginalFilename().isEmpty())
+			{
+				linkImage = FileUploadController.handleFileUpload(file);
+				news.setContent(news.getContent() + "<br/> <a href=\""+linkImage+"\"  target=\"_blank\">" + linkImage +"</a>");
+			}
 			news.setDate_created(java.time.LocalDate.now().toString());
 			Account acc = accountService.GetAccountSession(request);
 			news.setUsername(acc.getUsername());
@@ -67,7 +70,7 @@ public class AdminController {
 			if(!file.getOriginalFilename().isEmpty())
 			{
 				linkImage = FileUploadController.handleFileUpload(file);
-				news.setContent(news.getContent() + "<br/>" + linkImage);
+				news.setContent(news.getContent() + "<br/> <a href=\""+linkImage+"\"  target=\"_blank\">" + linkImage +"</a>");
 			}
 		}
 		try {

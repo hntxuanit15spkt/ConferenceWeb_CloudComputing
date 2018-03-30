@@ -35,7 +35,7 @@
 	content="Premium Quality and Responsive UI for Dashboard.">
 <meta name="author" content="ThemePixels">
 
-<title>Bracket Responsive Bootstrap 4 Admin Template</title>
+<title>Login - ICSSE 2017</title>
 
 <!-- vendor css -->
 <link href="../../static/lib/font-awesome/css/font-awesome.css"

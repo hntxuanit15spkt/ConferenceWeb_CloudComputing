@@ -37,8 +37,7 @@
 	content="Premium Quality and Responsive UI for Dashboard.">
 <meta name="author" content="ThemePixels">
 
-<title>Data Table Design - Bracket Responsive Bootstrap 4 Admin
-	Template</title>
+<title>Admin page - ICSSE 2017</title>
 
 <!-- vendor css -->
 <link href="../../static/lib/font-awesome/css/font-awesome.css"
@@ -120,7 +119,7 @@
 			<!-- br-menu-link -->
 			<ul class="br-menu-sub nav flex-column">
 				<li class="nav-item"><a href="/all-news"
-					class="nav-link active">News list</a></li>
+					class="nav-link active">List news</a></li>
 				<li class="nav-item"><a href="/create-news"
 					class="nav-link">Add news</a></li>
 			</ul>

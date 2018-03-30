@@ -37,8 +37,7 @@
 	content="Premium Quality and Responsive UI for Dashboard.">
 <meta name="author" content="ThemePixels">
 
-<title>Text Editor Design - Bracket Responsive Bootstrap 4 Admin
-	Template</title>
+<title>Admin page - ICSSE 2017</title>
 
 <!-- vendor css -->
 <link href="../../static/lib/font-awesome/css/font-awesome.css"
@@ -100,8 +99,7 @@
 			</a>
 			<!-- br-menu-link -->
 			<ul class="br-menu-sub nav flex-column">
-				<li class="nav-item"><a href="/all-news" class="nav-link">News
-						list</a></li>
+				<li class="nav-item"><a href="/all-news" class="nav-link">List news</a></li>
 				<li class="nav-item"><a href="/create-news" class="nav-link">Add
 						news</a></li>
 				<li class="nav-item"><a href="/create-news"
@@ -447,14 +445,14 @@
 							class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-t-80 mg-b-10">
 							Title: <span class="tx-danger">*</span>
 						</h6>
-						<textarea id="summernote1" name="title" style="display: none;">${news.title}</textarea>
+						<textarea id="summernote1" name="title" style="display: none;" required>${news.title}</textarea>
 					</div>
 
 					<h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-t-80 mg-b-10">Content</h6>
-					<textarea id="summernote2" name="content" style="display: none;">${news.content}</textarea>
-					<table>
+					<textarea id="summernote2" name="content" style="display: none;" required>${news.content}</textarea>
+					<table style="margin-top: 15px; margin-bottom: 20px;">
 						<tr>
-							<td>Select photo:</td>
+							<td><h6>Select file: </h6></td>
 							<td><input type="file" name="image" /></td>
 						</tr>
 					</table>
