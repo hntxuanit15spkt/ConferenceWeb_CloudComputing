@@ -8,7 +8,7 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <%@ page contentType="text/html; charset=UTF-8"%>
-<title>Contact</title>
+<title>About</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--bootstrap & Jquery-->
 <link rel="stylesheet"
@@ -59,11 +59,11 @@
 				<div class="navbar-header">
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="/">HOME</a></li>
-						<li><a href="about">ABOUT</a></li>
+						<li class="active"><a href="about">ABOUT</a></li>
 						<li><a href="keynote-speaker">KEYNOTE SPEAKER</a></li>
 						<li><a href="program">PROGRAM</a></li>
 						<li><a href="venue-hotel">VENUE & HOTEL</a></li>
-						<li class="active"><a href="contact">CONTACT</a></li>
+						<li><a href="contact">CONTACT</a></li>
 
 					</ul>
 				</div>
@@ -159,7 +159,8 @@
 							News</h3>
 						<div style="padding-top: 10px;">
 							<c:forEach var="news" items="${lst_news}">
-								<p style="color: #b5150d;">${news.date_created}
+								<p style="color: #b5150d;">Date created 
+										${news.date_created}
 								</p>
 								<a href="news?id=${news.id}">${news.title}</a>
 								<hr />

@@ -58,9 +58,19 @@
 
 <!-- Bracket CSS -->
 <link rel="stylesheet" href="../../static/css/bracket.css">
+
 </head>
 
 <body>
+	<%-- thông báo --%>
+	<c:if test="${message ne ''}">
+		<script type="text/javascript">
+	 	var message = '${message}';
+	 	if(message != ""){
+			alert(message);
+	 	}
+	</script>
+	</c:if>
 
 	<!-- ########## START: LEFT PANEL ########## -->
 	<div class="br-logo">
@@ -90,7 +100,7 @@
 				<li class="nav-item"><a href="#" class="nav-link">Add
 						account</a></li>
 			</ul>
-			<a href="#" class="br-menu-link active show-sub">
+			<a href="#" class="br-menu-link">
 				<div class="br-menu-item">
 					<i class="menu-item-icon icon ion-ios-bookmarks-outline tx-20"></i>
 					<span class="menu-item-label">News management</span> <i
@@ -105,7 +115,7 @@
 				<li class="nav-item"><a href="/create-news"
 					class="nav-link active">Update news</a></li>
 			</ul>
-			<a href="#" class="br-menu-link">
+			<a href="#" class="br-menu-link active show-sub">
 				<div class="br-menu-item">
 					<i class="menu-item-icon icon ion-ios-paper-outline tx-22"></i> <span
 						class="menu-item-label">Pages management</span><i
@@ -114,13 +124,56 @@
 			</a>
 
 			<ul class="br-menu-sub nav flex-column">
-				<li class="nav-item"><a href="page?idpage=1" class="nav-link">Home</a></li>
+				<%if(request.getParameter("idpage").equals("1")) {%>
+				<li class="nav-item"><a href="page?idpage=1" class="nav-link active">Home</a></li>
 				<li class="nav-item"><a href="page?idpage=2" class="nav-link">About</a></li>
 				<li class="nav-item"><a href="page?idpage=3" class="nav-link">Keynote Speaker</a></li>
 				<li class="nav-item"><a href="page?idpage=4" class="nav-link">Program</a></li>
 				<li class="nav-item"><a href="page?idpage=5" class="nav-link">Venue & Hotel</a></li>
 				<li class="nav-item"><a href="page?idpage=6" class="nav-link">Contact</a></li>
+				<%} %>
+				<%if(request.getParameter("idpage").equals("2")) {%>
+				<li class="nav-item"><a href="page?idpage=1" class="nav-link">Home</a></li>
+				<li class="nav-item"><a href="page?idpage=2" class="nav-link active">About</a></li>
+				<li class="nav-item"><a href="page?idpage=3" class="nav-link">Keynote Speaker</a></li>
+				<li class="nav-item"><a href="page?idpage=4" class="nav-link">Program</a></li>
+				<li class="nav-item"><a href="page?idpage=5" class="nav-link">Venue & Hotel</a></li>
+				<li class="nav-item"><a href="page?idpage=6" class="nav-link">Contact</a></li>
+				<%} %>
+				<%if(request.getParameter("idpage").equals("3")) {%>
+				<li class="nav-item"><a href="page?idpage=1" class="nav-link">Home</a></li>
+				<li class="nav-item"><a href="page?idpage=2" class="nav-link">About</a></li>
+				<li class="nav-item"><a href="page?idpage=3" class="nav-link active">Keynote Speaker</a></li>
+				<li class="nav-item"><a href="page?idpage=4" class="nav-link">Program</a></li>
+				<li class="nav-item"><a href="page?idpage=5" class="nav-link">Venue & Hotel</a></li>
+				<li class="nav-item"><a href="page?idpage=6" class="nav-link">Contact</a></li>
+				<%} %>
+				<%if(request.getParameter("idpage").equals("4")) {%>
+				<li class="nav-item"><a href="page?idpage=1" class="nav-link">Home</a></li>
+				<li class="nav-item"><a href="page?idpage=2" class="nav-link">About</a></li>
+				<li class="nav-item"><a href="page?idpage=3" class="nav-link">Keynote Speaker</a></li>
+				<li class="nav-item"><a href="page?idpage=4" class="nav-link active">Program</a></li>
+				<li class="nav-item"><a href="page?idpage=5" class="nav-link">Venue & Hotel</a></li>
+				<li class="nav-item"><a href="page?idpage=6" class="nav-link">Contact</a></li>
+				<%} %>
+				<%if(request.getParameter("idpage").equals("5")) {%>
+				<li class="nav-item"><a href="page?idpage=1" class="nav-link">Home</a></li>
+				<li class="nav-item"><a href="page?idpage=2" class="nav-link">About</a></li>
+				<li class="nav-item"><a href="page?idpage=3" class="nav-link">Keynote Speaker</a></li>
+				<li class="nav-item"><a href="page?idpage=4" class="nav-link">Program</a></li>
+				<li class="nav-item"><a href="page?idpage=5" class="nav-link active">Venue & Hotel</a></li>
+				<li class="nav-item"><a href="page?idpage=6" class="nav-link">Contact</a></li>
+				<%} %>
+				<%if(request.getParameter("idpage").equals("6")) {%>
+				<li class="nav-item"><a href="page?idpage=1" class="nav-link">Home</a></li>
+				<li class="nav-item"><a href="page?idpage=2" class="nav-link">About</a></li>
+				<li class="nav-item"><a href="page?idpage=3" class="nav-link">Keynote Speaker</a></li>
+				<li class="nav-item"><a href="page?idpage=4" class="nav-link">Program</a></li>
+				<li class="nav-item"><a href="page?idpage=5" class="nav-link">Venue & Hotel</a></li>
+				<li class="nav-item"><a href="page?idpage=6" class="nav-link active">Contact</a></li>
+				<%} %>
 			</ul>
+			<!-- d-flex -->
 		</div>
 		<!-- info-list -->
 
@@ -410,47 +463,28 @@
 		<div class="br-pageheader pd-y-15 pd-l-20">
 			<nav class="breadcrumb pd-0 mg-0 tx-12">
 				<a class="breadcrumb-item" href="index.html">ISSCE</a> <a
-					class="breadcrumb-item" href="#">News</a> <span
+					class="breadcrumb-item" href="#">Pages</a> <span
 					class="breadcrumb-item active">Update</span>
 			</nav>
 		</div>
 		<!-- br-pageheader -->
 		<div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30">
-			<h4 class="tx-gray-800 mg-b-5">Update News</h4>
+			<h4 class="tx-gray-800 mg-b-5">Edit ${pagecontent.name} Page</h4>
 		</div>
 
 		<div class="br-pagebody">
 			<div class="br-section-wrapper">
-				<!-- 				<form method="POST" action="form-validation.html save-news" data-parsley-validate> -->
-				<form method="POST" action="save-news" enctype="multipart/form-data" data-parsley-validate id="myForm">
+				<form method="POST" action="save-page?idpage=${idpage}">
+					
 					<div class="col-sm-12 col-xs-12">
-						<input type="hidden" name="id" value="${news.id}" />
-					</div>
-					<div class="col-sm-12 col-xs-12">
-						<input type="hidden" name="date_created" value="${news.date_created}" />
+						<input type="hidden" name="id" value="${idpage}" />
 					</div>
 					<div class="col-sm-12 col-xs-12">
-						<input type="hidden" name="username" value="${news.username}" />
+						<input type="hidden" name="name" value="${pagecontent.name}" />
 					</div>
-					<div class="col-sm-12 col-xs-12">
-						<input type="hidden" name="account_id" value="${news.account_id}" />
-					</div>
-					<div class="form-group mg-b-0">
-						<h6
-							class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-t-80 mg-b-10">
-							Title: <span class="tx-danger">*</span>
-						</h6>
-						<textarea id="summernote1" name="title" style="display: none;" required>${news.title}</textarea>
-					</div>
-
-					<h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-t-80 mg-b-10">Content</h6>
-					<textarea id="summernote2" name="content" style="display: none;" required>${news.content}</textarea>
-					<table style="margin-top: 15px; margin-bottom: 20px;">
-						<tr>
-							<td><h6>Select file: </h6></td>
-							<td><input type="file" name="image" /></td>
-						</tr>
-					</table>
+					<h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-t-80 mg-b-10">Page Content</h6>
+					<textarea id="summernote" name="content" style="display: none;" required>${pagecontent.content}</textarea>
+					
 					<button type="submit"
 						class="btn btn-info tx-11 pd-y-12 tx-uppercase tx-spacing-2">Save</button>
 
@@ -503,20 +537,14 @@
 			var editor = new MediumEditor('.editable');
 
 			// Summernote editor
-			$('#summernote1').summernote({
-				height : 100,
-				tooltip : false
-			});
-			$('#summernote2').summernote({
-				height : 450,
+			$('#summernote').summernote({
+				height : 600,
 				tooltip : false
 			});
 			$('#myForm').submit(
 					function() {
 						$('textarea[name=content]').val(
-								$('#summernote2').summernote('code'));
-						$('textarea[name=title]').val(
-								$('#summernote1').summernote('code'));
+								$('#summernote').summernote('code'));
 					});
 		});
 	</script>

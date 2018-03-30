@@ -28,7 +28,7 @@ public class LoginController {
 		if (session != null) {
 			session.invalidate();
 		}
-		return "login";
+		return "Home";
 	}
 
 	@PostMapping("/post-login")

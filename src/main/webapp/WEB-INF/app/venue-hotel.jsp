@@ -141,88 +141,13 @@
 					<div class="gioithieu">
 						<div class="title_display">
 							<span style="background-color: inherit;"><b><span
-									style="color: #666;"><h5>VENUE AND HOTEL</h5></span></b></span>
+									style="color: #666;"><h5>${pagecontent.name}</h5></span></b></span>
 						</div>
 						<h5>
 							<span style="color: rgb(148, 189, 123);">-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span><br>
 						</h5>
 						<p>
-							<span style="font-size: 20px;"><br> <strong
-								style="color: #002060;">CONFERENCE VENUE:</strong><span
-								style="font-weight: bold; font-size: 20px; color: #002060;"><br>
-									<span style="font-size: 20px;"></span><span
-									style="font-size: 20px;"></span></span><span style="font-size: 16px;"><span
-									style="font-size: 20px; color: #c00000;"><span
-										style="font-size: 20px;"><span
-											style="font-weight: bold; font-size: 20px;"><br>
-												Ho Chi Minh City University of Technology and Education</span><br>
-									</span>No. 01 Vo Van Ngan Street, Thu Duc District, Ho Chi Minh City</span><br>
-									<br> </span><span style="color: #002060;"><img alt=""
-									src="http://icsse2017.hcmute.edu.vn/Resources/Images/SubDomain/icsse2017/HCMUTE.jpg"
-									style="width: 600px;"></span><br> <br> <span
-								style="font-weight: bold; color: #002060;"><br> <br>
-									<span style="font-size: 20px;">WELCOME DINNER VENUE:</span></span><br>
-								<span style="color: #c00000;"><br> <span
-									style="font-size: 11pt;"><span
-										style="font-weight: bold; font-size: 20px;">Kim Dung
-											Restaurant</span><span style="font-weight: bold;">&nbsp;</span><br>
-										<span style="font-size: 20px;">No. 02, Dang Van Bi
-											Street, Thu Duc District, Ho Chi Minh City<br> <br>
-											<img alt=""
-											src="http://icsse2017.hcmute.edu.vn/Resources/Images/SubDomain/icsse2017/kim%20dung%201.png"
-											style="width: 600px;"><br> <br> <img alt=""
-											src="http://icsse2017.hcmute.edu.vn/Resources/Images/SubDomain/icsse2017/kim%20dung%202.png"
-											style="width: 600px;"><br>
-									</span></span></span><br> <br> <span
-								style="font-size: 20px; text-align: left; font-weight: bold;"><span
-									style="font-size: 20px; color: #002060;">GALA BANQUET
-										DINNER VENUE:<br>
-								</span><br> <span style="font-size: 20px; color: #c00000;">Sesan
-										Restaurant&nbsp;</span><br> </span><span style="font-size: 18px;"><span
-									style="font-size: 20px; text-align: left;"><span
-										style="font-size: 18px;"><span
-											style="font-size: 20px; color: #c00000;">No. 14,
-												Einstein Street, Thu Duc District,&nbsp;<span
-												style="font-size: 20px; color: #c00000;">Ho Chi Minh
-													City</span><br>
-										</span><a href="http://sesan.com.vn/" target="_blank"><span
-												style="font-size: 20px;">http://sesan.com.vn/</span><br>
-										</a> </span><br> </span><span
-									style="text-align: left; background-color: #ffc000; color: #002060;"><span
-										style="font-size: 20px;"><strong>The best
-												paper awards to be delivered at the Gala Banquet</strong></span><br> </span></span><strong
-								style="font-size: 20px;"><br> </strong><img alt=""
-								src="http://icsse2017.hcmute.edu.vn/Resources/Images/SubDomain/icsse2017/Sesan%202.jpg"><br>
-								<br> <img alt=""
-								src="http://icsse2017.hcmute.edu.vn/Resources/Images/SubDomain/icsse2017/Sesan%201.jpg"
-								style="width: 600px;"><br> <br> <br> <strong><span
-									style="font-size: 20px; color: #002060;">HO CHI MINH
-										CITY TOUR</span></strong><br> <br> <span
-								style="font-size: 20px; color: #c00000;">Venue: </span><span
-								style="font-size: 20px; color: #c00000;">Gather at Ho Chi
-									Minh City Opera House&nbsp;</span><br> <span
-								style="font-size: 20px; color: #c00000;">&nbsp; &nbsp;
-									&nbsp; &nbsp; &nbsp; &nbsp; No.7, Cong Truong Lam Son Street,
-									District 1, HCMC</span><span style="font-size: 20px;"><br>
-							</span> <span style="color: #c00000;">&nbsp; &nbsp; &nbsp; &nbsp;
-									&nbsp; &nbsp;</span><span style="color: #002060;">&nbsp;</span><span
-								style="background-color: #ffc000; text-align: left; font-size: 20px; color: #002060;">Departure:
-									08:00am&nbsp;<br> <br>
-									<div style="text-align: center;">
-										<img alt=""
-											src="http://icsse2017.hcmute.edu.vn/Resources/Images/SubDomain/icsse2017/Nha%20hat%201.jpg">
-									</div>
-							</span><span style="color: #002060;"><br> </span><img alt=""
-								src="http://icsse2017.hcmute.edu.vn/Resources/Images/SubDomain/icsse2017/nha%20hat%203.jpg"><br>
-								<br> <strong style="color: #002060;">INFORMATION
-									ABOUT HOTEL IN HO CHI MINH CITY</strong><br> </span><span
-								style="font-size: 18px; color: #002060;"><br> <strong>
-									Please visit&nbsp;<span style="font-size: 18px;"><a
-										href="https://www.tripadvisor.co.uk" target="_blank"><span
-											style="font-size: 24px;">https://www.tripadvisor.co.uk</span></a><span
-										style="font-family: &amp; quot;times new roman&amp;quot;;">&nbsp;</span></span>to
-									find out all information about hotel in HCMC.
-							</strong><br> <br> </span><br>
+							${pagecontent.content}
 						</p>
 					</div>
 

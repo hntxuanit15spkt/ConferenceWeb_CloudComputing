@@ -106,24 +106,19 @@
 			<a href="#" class="br-menu-link">
 				<div class="br-menu-item">
 					<i class="menu-item-icon icon ion-ios-paper-outline tx-22"></i> <span
-						class="menu-item-label">Webpages management</span>
+						class="menu-item-label">Pages management</span><i
+						class="menu-item-arrow fa fa-angle-down"></i>
 				</div> <!-- menu-item -->
 			</a>
 
-			<!-- br-menu-link -->
 			<ul class="br-menu-sub nav flex-column">
-				<li class="nav-item"><a href="background.html" class="nav-link">Background</a></li>
-				<li class="nav-item"><a href="border.html" class="nav-link">Border</a></li>
-				<li class="nav-item"><a href="height.html" class="nav-link">Height</a></li>
-				<li class="nav-item"><a href="margin.html" class="nav-link">Margin</a></li>
-				<li class="nav-item"><a href="padding.html" class="nav-link">Padding</a></li>
-				<li class="nav-item"><a href="position.html" class="nav-link">Position</a></li>
-				<li class="nav-item"><a href="typography-util.html"
-					class="nav-link">Typography</a></li>
-				<li class="nav-item"><a href="width.html" class="nav-link">Width</a></li>
+				<li class="nav-item"><a href="page?idpage=1" class="nav-link">Home</a></li>
+				<li class="nav-item"><a href="page?idpage=2" class="nav-link">About</a></li>
+				<li class="nav-item"><a href="page?idpage=3" class="nav-link">Keynote Speaker</a></li>
+				<li class="nav-item"><a href="page?idpage=4" class="nav-link">Program</a></li>
+				<li class="nav-item"><a href="page?idpage=5" class="nav-link">Venue & Hotel</a></li>
+				<li class="nav-item"><a href="page?idpage=6" class="nav-link">Contact</a></li>
 			</ul>
-			<!-- br-menu-link -->
-			<!-- d-flex -->
 		</div>
 		<!-- info-list -->
 

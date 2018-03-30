@@ -8,17 +8,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import conferenceWeb.service.NewsService;
+import conferenceWeb.service.PageService;
 
 @Controller
 public class HomeController {
 
     @Autowired
     private NewsService newsService;
+    @Autowired
+    private PageService pageService;
 
     // Giao diện vào trang chủ
     @GetMapping("/")
     public String home(HttpServletRequest request) {
 	request.setAttribute("lst_news", newsService.findAll());
+	request.setAttribute("pagecontent", pageService.findPage(1));
 	return "Home";
     }
 
@@ -30,10 +34,19 @@ public class HomeController {
 	return "news";
     }
 
+    // Giao diện vào About
+    @GetMapping("/about")
+    public String about(HttpServletRequest request) {
+	request.setAttribute("lst_news", newsService.findAll());
+	request.setAttribute("pagecontent", pageService.findPage(2));
+	return "about";
+    }
+    
     // Giao diện vào Keynote-speaker
     @GetMapping("/keynote-speaker")
     public String speaker(HttpServletRequest request) {
 	request.setAttribute("lst_news", newsService.findAll());
+	request.setAttribute("pagecontent", pageService.findPage(3));
 	return "keynote-speaker";
     }
 
@@ -41,6 +54,7 @@ public class HomeController {
     @GetMapping("/contact")
     public String contact(HttpServletRequest request) {
 	request.setAttribute("lst_news", newsService.findAll());
+	request.setAttribute("pagecontent", pageService.findPage(6));
 	return "contact";
     }
 
@@ -48,6 +62,7 @@ public class HomeController {
     @GetMapping("/venue-hotel")
     public String venue_hotel(HttpServletRequest request) {
 	request.setAttribute("lst_news", newsService.findAll());
+	request.setAttribute("pagecontent", pageService.findPage(5));
 	return "venue-hotel";
     }
 
@@ -55,6 +70,7 @@ public class HomeController {
     @GetMapping("/program")
     public String program(HttpServletRequest request) {
 	request.setAttribute("lst_news", newsService.findAll());
+	request.setAttribute("pagecontent", pageService.findPage(4));
 	return "program";
     }
 }
