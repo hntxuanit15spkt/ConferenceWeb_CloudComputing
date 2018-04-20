@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import conferenceWeb.hello.storage.StorageService;
 import conferenceWeb.model.Account;
 import conferenceWeb.model.News;
 import conferenceWeb.model.Page;
@@ -31,8 +30,6 @@ public class AdminController {
 	private NewsService newsService;
 	@Autowired
 	private AccountService accountService;
-	@Autowired
-	private final StorageService storageService;
 	@Autowired
     private PageService pageService;
 
@@ -48,11 +45,6 @@ public class AdminController {
 		return "all-news";
 	}
 
-	@Autowired
-	public AdminController(StorageService storageService) {
-		this.storageService = storageService;
-	}
-
 	@SuppressWarnings({ "unused", "static-access" })
 	@RequestMapping(value = "/save-news", headers = ("content-type=multipart/*"), method = RequestMethod.POST, consumes = {
 			"application/x-www-form-urlencoded" })
@@ -63,7 +55,7 @@ public class AdminController {
 		if (news.getId() == 0) {
 			if(!file.getOriginalFilename().isEmpty())
 			{
-				linkImage = FileUploadController.handleFileUpload(file);
+				linkImage = UploadFileToS3.handleFileUpload(file);
 				news.setContent(news.getContent() + "<br/> <a href=\""+linkImage+"\"  target=\"_blank\">" + linkImage +"</a>");
 			}
 			news.setDate_created(java.time.LocalDate.now().toString());
@@ -76,7 +68,7 @@ public class AdminController {
 			announce = "Update";
 			if(!file.getOriginalFilename().isEmpty())
 			{
-				linkImage = FileUploadController.handleFileUpload(file);
+				linkImage = UploadFileToS3.handleFileUpload(file);
 				news.setContent(news.getContent() + "<br/> <a href=\""+linkImage+"\"  target=\"_blank\">" + linkImage +"</a>");
 			}
 		}
