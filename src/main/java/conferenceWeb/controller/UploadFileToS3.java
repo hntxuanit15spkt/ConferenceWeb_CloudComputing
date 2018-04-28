@@ -29,8 +29,8 @@ public class UploadFileToS3 {
 		//user must have AWSConnector and AmazonS3FullAccess for 
 		// this example to work
 		AWSCredentials credentials = new BasicAWSCredentials(
-				"AKIAIMKCKKJFUJQEYI2A", 
-				"yiGywl7S1qJq/PegGe6maHb7+S6FJ+NnFcaxdb7L");
+				"AKIAI2YO3MDW7IBQ6YTQ", 
+				"1dvL/LR0JibPxV5JyFYYPpG2raASMdvFyQtw1nVv");
 		
 		// create a client connection based on credentials
 		AmazonS3 s3client = new AmazonS3Client(credentials);
